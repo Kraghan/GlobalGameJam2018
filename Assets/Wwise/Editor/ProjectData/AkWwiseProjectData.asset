@@ -12,14 +12,80 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   CurrentPluginConfig: 
-  EventWwu: []
-  AuxBusWwu: []
-  StateWwu: []
-  SwitchWwu: []
-  BankWwu: []
-  RtpcWwu: []
-  TriggerWwu: []
-  ExpandedItems: []
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{703930B1-C9ED-4023-83F8-2FE5FCEC5017}'
+    m_lastTimePsrt1: -1342310972
+    m_lastTimePart2: -1999280883
+    List:
+    - Name: TestWwise
+      Path: Default Work Unit\TestWwise
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: TestWwise
+        ObjectType: 3
+      ID: -1901777060
+      Guid: 060faa028fa278479f585e8782bbcd31
+      maxAttenuation: 0
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{B95DF31A-7DE6-481B-8FD6-7C084C5DF8DD}'
+    m_lastTimePsrt1: -547858375
+    m_lastTimePart2: -1999280888
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{A1567669-40C1-4688-93FA-EF611A04BC5A}'
+    m_lastTimePsrt1: -544760034
+    m_lastTimePart2: -1999280888
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{879AACD1-E9B1-48D2-8A0B-57FDE230D91F}'
+    m_lastTimePsrt1: -544760034
+    m_lastTimePart2: -1999280888
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{370C6306-7D57-4F2E-BF53-4670A3B9F39B}'
+    m_lastTimePsrt1: -1342155558
+    m_lastTimePart2: -1999280883
+    List:
+    - Name: SoundBank
+      Path: Default Work Unit\SoundBank
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SoundBank
+        ObjectType: 7
+      ID: 1661994096
+      Guid: 96c4a3e13b5bf64fa034974309e6b9e4
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{3233103F-C51F-4BE8-8178-AABFCB15B6F7}'
+    m_lastTimePsrt1: -547868406
+    m_lastTimePart2: -1999280888
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{C04AD7FD-D508-408A-A75D-A264EAB881C1}'
+    m_lastTimePsrt1: -544750006
+    m_lastTimePart2: -1999280888
+    List: []
+  ExpandedItems:
+  - /GGJWwise
+  - /GGJWwise/Events
+  - /GGJWwise/Events/Default Work Unit
+  - /GGJWwise/SoundBanks
+  - /GGJWwise/SoundBanks/Default Work Unit
   m_lastPopulateTimePsrt1: 0
   m_lastPopulateTimePart2: 0
   autoPopulateEnabled: 1
