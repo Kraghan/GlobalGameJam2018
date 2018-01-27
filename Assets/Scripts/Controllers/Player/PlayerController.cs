@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour {
         if (Mathf.Abs(m_rigidbody.velocity.x) < m_speed)
             m_rigidbody.AddForce(new Vector2(xToAdd, 0));
         if (xToAdd == 0)
-            m_rigidbody.AddForce(new Vector2(-m_rigidbody.velocity.x * 2, 0));
+            m_rigidbody.velocity = new Vector2(0,m_rigidbody.velocity.y);
 
         // Jump
 
@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour {
             (m_rigidbody.velocity.x > 0 && transform.localScale.x < 0))
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         m_animator.SetFloat("YVelocity", m_rigidbody.velocity.y);
+        m_animator.speed = Mathf.Abs(Input.GetAxis("Horizontal")) >= 0.1f && IsGrounded() ? Mathf.Abs(Input.GetAxis("Horizontal")) : 1;
     }
     #endregion
 
