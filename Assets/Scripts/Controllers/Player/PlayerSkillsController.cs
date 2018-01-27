@@ -75,7 +75,7 @@ public class PlayerSkillsController : MonoBehaviour
                 loadController.RemoveLoad();
 
                 lighSkill.enabled          = true;
-                lighSkill.initialDirection = pickerController.GetAngle();
+                lighSkill.initialDirection = new Vector2(axis.x, axis.y);
 
                 // Finally Casts the wave
                 lighSkill.CastLightWave();

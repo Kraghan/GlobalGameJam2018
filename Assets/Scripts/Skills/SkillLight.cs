@@ -53,15 +53,18 @@ public class SkillLight : MonoBehaviour
             ContactPoint2D[] contactPoints = new ContactPoint2D[1];
 
             // Gets the contact points and the normal
-            contactCount   = collision.GetContacts(contactPoints);
-            Vector2 normal = contactPoints[0].normal;
+            contactCount       = collision.GetContacts(contactPoints);
+            Vector2 normal     = contactPoints[0].normal;
+            Vector2 reflection = Vector2.Reflect(velocity.normalized, normal);
 
-            Debug.Log("Normal : " + normal);
-
-            // Computing incidence angle
-            float angle = Vector2.Angle(normal, velocity);
-            Debug.Log("Velocity : " + velocity.normalized);
-            Debug.Log("Angle : " + angle);
+            velocity      = reflection * initialSpeed;
+            body.velocity = velocity;
+        }
+        else
+        {
+            playerController.enabled = true;
+            body.gravityScale        = 1;
+            body.velocity            = new Vector2(0.0f, 0.0f);
         }
     }
     
@@ -70,15 +73,13 @@ public class SkillLight : MonoBehaviour
      */
     public void CastLightWave()
     {
-        // Body settings
-        body.gravityScale = 0;
-        body.AddForce(initialDirection * initialSpeed);
-
+        // Computing new velocity
         velocity = initialDirection * initialSpeed;
 
-        Debug.Log(initialDirection * initialSpeed);
-        playerController.enabled = false;
+        // Body settings
+        body.gravityScale = 0;
+        body.velocity     = velocity;
 
-        Debug.Log("Casted");
+        playerController.enabled = false;
     }
 }

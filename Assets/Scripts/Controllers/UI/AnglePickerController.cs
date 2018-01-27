@@ -27,9 +27,6 @@ public class AnglePickerController : MonoBehaviour
      */
 	void Update ()
     {
-        axis.x = Input.GetAxis("Horizontal");
-        axis.y = Input.GetAxis("Vertical");
-
         if (axis != Vector2.zero)
         {
             arrow.transform.eulerAngles = new Vector3(
@@ -41,6 +38,9 @@ public class AnglePickerController : MonoBehaviour
         }
     }
 
+    /**
+     * Debug only
+     */
     private void Raycast(Vector2 start, Vector2 dir)
     {
         RaycastHit2D hit = Physics2D.Raycast(start, dir, 1000.0f);
