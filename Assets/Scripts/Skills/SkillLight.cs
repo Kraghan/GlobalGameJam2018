@@ -22,7 +22,8 @@ public class SkillLight : MonoBehaviour
      */
     void Start ()
     {
-        // None
+        body             = GetComponent<Rigidbody2D>();
+        playerController = GetComponent<PlayerController>();
     }
 	
     /**
@@ -30,7 +31,7 @@ public class SkillLight : MonoBehaviour
      */
 	void Update ()
     {
-        // TODO
+        // None
     }
 
     /**
@@ -68,6 +69,7 @@ public class SkillLight : MonoBehaviour
 
             // Settings back the layer
             this.gameObject.layer = 8;
+            Destroy(this);
         }
     }
     

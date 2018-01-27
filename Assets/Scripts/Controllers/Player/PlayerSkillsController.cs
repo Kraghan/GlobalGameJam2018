@@ -25,16 +25,12 @@ public class PlayerSkillsController : MonoBehaviour
      */
     void Start ()
     {
-        lighSkill        = GetComponent<SkillLight>();
-        soundSKill       = GetComponent<SkillSound>();
         timeFreezeSkill  = GetComponent<SkillTimeFreeze>();
         playerController = GetComponent<PlayerController>();
 
         wasHoldingLight  = false;
         wasHoldingSound  = false;
         wasHoldingMagnet = false;
-
-        lighSkill.enabled = false;
     }
 	
 	/**
@@ -73,12 +69,15 @@ public class PlayerSkillsController : MonoBehaviour
             }
             else if(wasHoldingLight)
             {
+                if(GetComponent<SkillLight>() == null)
+                {
+                    loadController.RemoveLoad();
+                    lighSkill = this.gameObject.AddComponent<SkillLight>();
+                }
+            
                 wasHoldingLight = false;
-                loadController.RemoveLoad();
-
-                lighSkill.enabled          = true;
+                lighSkill.initialSpeed     = 10.0f;
                 lighSkill.initialDirection = new Vector2(axis.x, axis.y);
-
                 lighSkill.CastLightWave();
             }
 
@@ -89,12 +88,16 @@ public class PlayerSkillsController : MonoBehaviour
             }
             else if (wasHoldingSound)
             {
+                Debug.Log("Casting sound wave");
+                if (GetComponent<SkillSound>() == null)
+                {
+                    loadController.RemoveLoad();
+                    soundSKill = this.gameObject.AddComponent<SkillSound>();
+                }
+
                 wasHoldingSound = false;
-                loadController.RemoveLoad();
-
-                soundSKill.enabled = true;
+                soundSKill.initialSpeed     = 10.0f;
                 soundSKill.initialDirection = new Vector2(axis.x, axis.y);
-
                 soundSKill.CastSoundWave();
             }
 

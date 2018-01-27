@@ -34,15 +34,24 @@ public class AnglePickerController : MonoBehaviour
                 arrow.transform.eulerAngles.y,
                 (Mathf.Atan2(axis.y, axis.x) - Mathf.PI / 2.0f) * Mathf.Rad2Deg);
 
-            LightRaycaster(transform.position, axis);
+            LightRaycaster(transform.position, axis, 2);
         }
     }
 
     /**
      * Debug only
      */
-    private void LightRaycaster(Vector2 start, Vector2 dir)
+    private void LightRaycaster(Vector2 start, Vector2 dir, int maxRecursion)
     {
+        if(maxRecursion == 0)
+        {
+            return;
+        }
+        else
+        {
+            maxRecursion -= 1;
+        }
+
         RaycastHit2D hit = Physics2D.Raycast(start, dir, 1000.0f);
         Debug.DrawRay(start, dir * 10000.0f, Color.red);
 
@@ -53,7 +62,7 @@ public class AnglePickerController : MonoBehaviour
             Vector2 normal     = hit.normal;
             Vector2 reflection = Vector2.Reflect(dir, normal);
 
-            LightRaycaster(hit.point, reflection);
+            LightRaycaster(hit.point, reflection, maxRecursion);
         }
     }
 
