@@ -45,11 +45,6 @@ public class TimerGaujeController : MonoBehaviour
      */
     void Update()
     {
-        if (Input.GetButton("Fire1"))
-        {
-            EmptyGauje();
-        }
-
         /**
          * Local state machine
          */
