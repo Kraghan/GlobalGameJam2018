@@ -16,6 +16,7 @@ public class PlayerSkillsController : MonoBehaviour
     private bool wasHoldingMagnet;
 
     private SkillLight       lighSkill;
+    private SkillSound       soundSKill;
     private SkillTimeFreeze  timeFreezeSkill;
     private PlayerController playerController;
 
@@ -25,6 +26,7 @@ public class PlayerSkillsController : MonoBehaviour
     void Start ()
     {
         lighSkill        = GetComponent<SkillLight>();
+        soundSKill       = GetComponent<SkillSound>();
         timeFreezeSkill  = GetComponent<SkillTimeFreeze>();
         playerController = GetComponent<PlayerController>();
 
@@ -64,9 +66,9 @@ public class PlayerSkillsController : MonoBehaviour
                 pickerController.gameObject.SetActive(false);
             }
 
+            // Light
             if (Input.GetButton("Form1"))
             {
-                // The player is holding the light skill
                 wasHoldingLight = true;
             }
             else if(wasHoldingLight)
@@ -77,8 +79,23 @@ public class PlayerSkillsController : MonoBehaviour
                 lighSkill.enabled          = true;
                 lighSkill.initialDirection = new Vector2(axis.x, axis.y);
 
-                // Finally Casts the wave
                 lighSkill.CastLightWave();
+            }
+
+            // Sound
+            if (Input.GetButton("Form2"))
+            {
+                wasHoldingSound = true;
+            }
+            else if (wasHoldingSound)
+            {
+                wasHoldingSound = false;
+                loadController.RemoveLoad();
+
+                soundSKill.enabled = true;
+                soundSKill.initialDirection = new Vector2(axis.x, axis.y);
+
+                soundSKill.CastSoundWave();
             }
 
 
