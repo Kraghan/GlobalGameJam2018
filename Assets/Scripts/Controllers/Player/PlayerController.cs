@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour {
     private float m_timeElapsedJump;
     private bool m_isGrounded;
     private GroundDetector m_groundDetector;
+    private bool m_canJump;
     #endregion
 
     #region Monobehaviour
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour {
         groundDetector.transform.position = transform.position + m_collider.bounds.center - new Vector3(0, m_collider.bounds.size.y * transform.localScale.y, 0);
         m_groundDetector = groundDetector.AddComponent<GroundDetector>();
         transform.position = playerPos;
+        m_canJump = true;
     }
 	
 	// Update is called once per frame
@@ -57,13 +59,25 @@ public class PlayerController : MonoBehaviour {
             m_rigidbody.AddForce(new Vector2(-m_rigidbody.velocity.x * 2, 0));
 
         // Jump
-        // Todo fix multi jump
-        if (Input.GetButton("Jump"))
-            m_timeElapsedJump += TimeManager.DeltaTime;
-        else
-            m_timeElapsedJump = 0;
 
-        if (m_timeElapsedJump > 0 && m_timeElapsedJump <= m_timeCompleteJump)
+        if (Input.GetButton("Jump"))
+        {
+            m_timeElapsedJump += TimeManager.DeltaTime;
+            m_canJump = false;
+        }
+        else
+        {
+            if (IsGrounded())
+            {
+                m_timeElapsedJump = 0;
+            }
+            else
+                m_timeElapsedJump = m_timeCompleteJump;
+            
+        }
+            
+
+        if (m_timeElapsedJump > 0 && m_timeElapsedJump < m_timeCompleteJump)
         {
             float yToAdd = Mathf.Lerp(m_jumpForce,0,m_timeElapsedJump/m_timeCompleteJump);
             m_rigidbody.AddForce(new Vector2(0, yToAdd));
