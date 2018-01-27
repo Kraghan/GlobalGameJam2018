@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour {
         GameObject groundDetector = new GameObject("Ground Detector");
         groundDetector.transform.parent = transform;
         groundDetector.transform.position = transform.position + m_collider.bounds.center - new Vector3(0, m_collider.bounds.size.y * transform.localScale.y, 0);
+        groundDetector.transform.localScale = new Vector3(0.3f, groundDetector.transform.localScale.y, groundDetector.transform.localScale.z);
         m_groundDetector = groundDetector.AddComponent<GroundDetector>();
         transform.position = playerPos;
         m_canJump = true;
@@ -97,6 +98,11 @@ public class PlayerController : MonoBehaviour {
     public bool IsGrounded()
     {
         return m_groundDetector.IsGrounded();
+    }
+
+    public void PlaySound(string soundName)
+    {
+        AkSoundEngine.PostEvent(soundName, gameObject);
     }
 
     #endregion

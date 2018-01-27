@@ -16,9 +16,29 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{703930B1-C9ED-4023-83F8-2FE5FCEC5017}'
-    m_lastTimePsrt1: -1342310972
-    m_lastTimePart2: -1999280883
+    m_lastTimePsrt1: -146596695
+    m_lastTimePart2: -1999280777
     List:
+    - Name: Music_Play
+      Path: Default Work Unit\Music_Play
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music_Play
+        ObjectType: 3
+      ID: 202194903
+      Guid: b456f8309849584788bff26d0ae01a1f
+      maxAttenuation: 0
+    - Name: Music_Stop
+      Path: Default Work Unit\Music_Stop
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music_Stop
+        ObjectType: 3
+      ID: -1067786235
+      Guid: 4d988fb8e8dbd8418cd9fcbe12635522
+      maxAttenuation: 0
     - Name: TestWwise
       Path: Default Work Unit\TestWwise
       PathAndIcons:
@@ -33,29 +53,40 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B95DF31A-7DE6-481B-8FD6-7C084C5DF8DD}'
-    m_lastTimePsrt1: -547858375
-    m_lastTimePart2: -1999280888
-    List: []
+    m_lastTimePsrt1: -141680869
+    m_lastTimePart2: -1999280777
+    List:
+    - Name: Rev
+      Path: Default Work Unit\Master Audio Bus\Rev
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Rev
+        ObjectType: 1
+      ID: 980603520
+      Guid: 03071f049f7e7848a5bb632397ab07aa
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{A1567669-40C1-4688-93FA-EF611A04BC5A}'
-    m_lastTimePsrt1: -544760034
+    m_lastTimePsrt1: -502337764
     m_lastTimePart2: -1999280888
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{879AACD1-E9B1-48D2-8A0B-57FDE230D91F}'
-    m_lastTimePsrt1: -544760034
+    m_lastTimePsrt1: -502327729
     m_lastTimePart2: -1999280888
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{370C6306-7D57-4F2E-BF53-4670A3B9F39B}'
-    m_lastTimePsrt1: -1342155558
-    m_lastTimePart2: -1999280883
+    m_lastTimePsrt1: -182552102
+    m_lastTimePart2: -1999280879
     List:
     - Name: SoundBank
       Path: Default Work Unit\SoundBank
@@ -70,14 +101,14 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{3233103F-C51F-4BE8-8178-AABFCB15B6F7}'
-    m_lastTimePsrt1: -547868406
+    m_lastTimePsrt1: -507496883
     m_lastTimePart2: -1999280888
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{C04AD7FD-D508-408A-A75D-A264EAB881C1}'
-    m_lastTimePsrt1: -544750006
+    m_lastTimePsrt1: -502322724
     m_lastTimePart2: -1999280888
     List: []
   ExpandedItems:

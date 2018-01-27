@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 1495197798}
   - component: {fileID: 1495197797}
   - component: {fileID: 1495197796}
+  - component: {fileID: 1495197799}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -423,6 +424,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1495197799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1495197795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d41c5b3ba10a274eb91f773c4b50441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  valueGuid: 96c4a3e13b5bf64fa034974309e6b9e4
+  bankName: SoundBank
+  loadAsynchronous: 0
+  decodeBank: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
 --- !u!1001 &2015815436
 Prefab:
   m_ObjectHideFlags: 0
@@ -476,6 +496,16 @@ Prefab:
         type: 2}
       propertyPath: m_groundDetectionOffset
       value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 50093488929297088, guid: 21c32a0b8f655de40b782772348108f3,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 70700285373189462, guid: 21c32a0b8f655de40b782772348108f3,
+        type: 2}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21c32a0b8f655de40b782772348108f3, type: 2}

@@ -17,6 +17,7 @@ public class PlayerSkillsController : MonoBehaviour
 
     private SkillLight       lighSkill;
     private SkillSound       soundSKill;
+    private SkillMagnet      magnetSKill;
     private SkillTimeFreeze  timeFreezeSkill;
     private PlayerController playerController;
 
@@ -100,6 +101,30 @@ public class PlayerSkillsController : MonoBehaviour
                 soundSKill.initialDirection = new Vector2(axis.x, axis.y);
                 soundSKill.CastSoundWave();
             }
+
+            // Magnet
+            if (Input.GetButton("Form3"))
+            {
+                wasHoldingMagnet = true;
+            }
+            else if (wasHoldingMagnet)
+            {
+                Debug.Log("Casting magnet wave");
+                if (GetComponent<SkillMagnet>() == null)
+                {
+                    loadController.RemoveLoad();
+                    magnetSKill = this.gameObject.AddComponent<SkillMagnet>();
+                }
+
+                wasHoldingMagnet = false;
+
+                soundSKill.initialSpeed = 5.0f;
+                soundSKill.initialDirection = new Vector2(axis.x, axis.y);
+                magnetSKill.CastMagnetWave();
+            }
+
+
+            // TODO check
         }
 
         // The player touched the ground
