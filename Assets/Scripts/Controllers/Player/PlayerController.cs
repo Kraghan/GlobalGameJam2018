@@ -26,9 +26,6 @@ public class PlayerController : MonoBehaviour {
     private float m_timeElapsedJump;
     private bool m_isGrounded;
     private GroundDetector m_groundDetector;
-
-    private SkillTimeFreeze timeFreezeSkill;
-
     #endregion
 
     #region Monobehaviour
@@ -47,8 +44,6 @@ public class PlayerController : MonoBehaviour {
         groundDetector.transform.position = transform.position + m_collider.bounds.center - new Vector3(0, m_collider.bounds.size.y * transform.localScale.y, 0);
         m_groundDetector = groundDetector.AddComponent<GroundDetector>();
         transform.position = playerPos;
-
-        timeFreezeSkill = GetComponent<SkillTimeFreeze>();
     }
 	
 	// Update is called once per frame
@@ -73,13 +68,6 @@ public class PlayerController : MonoBehaviour {
             float yToAdd = Mathf.Lerp(m_jumpForce,0,m_timeElapsedJump/m_timeCompleteJump);
             m_rigidbody.AddForce(new Vector2(0, yToAdd));
         }
-
-        if(Input.GetAxis("TimeFreeze") >= 0.5f)
-        {
-            timeFreezeSkill.Freeze();
-        }
-
-
         // Animator
         m_animator.SetBool("IsGrounded", IsGrounded());
         m_animator.SetFloat("XVelocity", Mathf.Abs(m_rigidbody.velocity.x));
