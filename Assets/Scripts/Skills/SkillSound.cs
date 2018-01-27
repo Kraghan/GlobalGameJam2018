@@ -14,6 +14,7 @@ public class SkillSound : MonoBehaviour
     private PlayerController playerController;
 
     // Physics
+    private float       magnitude;
     private Rigidbody2D body;
     private Vector2     velocity;
 
@@ -22,6 +23,7 @@ public class SkillSound : MonoBehaviour
      */
     void Start()
     {
+        magnitude        = 10.0f;
         body             = GetComponent<Rigidbody2D>();
         playerController = GetComponent<PlayerController>();
     }
@@ -31,7 +33,9 @@ public class SkillSound : MonoBehaviour
      */
     void Update()
     {
-        // Applying periodic function cosinus
+        velocity = new Vector2(
+            (velocity.normalized * Mathf.Sin(Time.time) * magnitude).x, 
+            (velocity.normalized * Mathf.Sin(Time.time) * magnitude).y);
     }
 
     /**
