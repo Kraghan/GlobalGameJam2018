@@ -22,7 +22,8 @@ public class SkillSound : MonoBehaviour
      */
     void Start()
     {
-        // None
+        body             = GetComponent<Rigidbody2D>();
+        playerController = GetComponent<PlayerController>();
     }
 
     /**
@@ -30,7 +31,7 @@ public class SkillSound : MonoBehaviour
      */
     void Update()
     {
-        // TODO
+        // Applying periodic function cosinus
     }
 
     /**
@@ -47,27 +48,31 @@ public class SkillSound : MonoBehaviour
      */
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Mirror")
-        {
-            int contactCount = 0;
-            ContactPoint2D[] contactPoints = new ContactPoint2D[1];
-
-            // Gets the contact points and the normal
-            contactCount = collision.GetContacts(contactPoints);
-            Vector2 normal = contactPoints[0].normal;
-            Vector2 reflection = Vector2.Reflect(velocity.normalized, normal);
-
-            velocity = reflection * initialSpeed;
-            body.velocity = velocity;
-        }
-        else
+        if (collision.gameObject.tag == "Void")
         {
             playerController.enabled = true;
             body.gravityScale = 1;
             body.velocity = new Vector2(0.0f, 0.0f);
-
+        
             // Settings back the layer
             this.gameObject.layer = 8;
+            Destroy(this);
+
+            Debug.Log("Void");
+        }
+        else
+        {
+            int contactCount = 0;
+            ContactPoint2D[] contactPoints = new ContactPoint2D[1];
+        
+            // Gets the contact points and the normal
+            contactCount = collision.GetContacts(contactPoints);
+
+            Vector2 normal     = contactPoints[0].normal;
+            Vector2 reflection = Vector2.Reflect(velocity.normalized, normal);
+            velocity           = reflection * initialSpeed;
+
+            body.velocity = velocity;
         }
     }
 
@@ -78,14 +83,14 @@ public class SkillSound : MonoBehaviour
     {
         // Computing new velocity
         velocity = initialDirection * initialSpeed;
-
+        
         // Body settings
         body.gravityScale = 0;
         body.velocity = velocity;
-
+        
         // Setting the player layer
         this.gameObject.layer = 10;
-
+        
         playerController.enabled = false;
     }
 }
