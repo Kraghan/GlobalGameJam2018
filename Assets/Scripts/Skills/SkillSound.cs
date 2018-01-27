@@ -14,7 +14,7 @@ public class SkillSound : MonoBehaviour
     private PlayerController playerController;
 
     // Physics
-    private float       magnitude;
+    public float        magnitude;
     private Rigidbody2D body;
     private Vector2     velocity;
 
@@ -23,7 +23,7 @@ public class SkillSound : MonoBehaviour
      */
     void Start()
     {
-        magnitude        = 10.0f;
+        magnitude        = 1.0f;
         body             = GetComponent<Rigidbody2D>();
         playerController = GetComponent<PlayerController>();
     }
@@ -33,9 +33,7 @@ public class SkillSound : MonoBehaviour
      */
     void Update()
     {
-        velocity = new Vector2(
-            (velocity.normalized * Mathf.Sin(Time.time) * magnitude).x, 
-            (velocity.normalized * Mathf.Sin(Time.time) * magnitude).y);
+        // None
     }
 
     /**
@@ -55,26 +53,23 @@ public class SkillSound : MonoBehaviour
         if (collision.gameObject.tag == "Void")
         {
             playerController.enabled = true;
-            body.gravityScale = 1;
-            body.velocity = new Vector2(0.0f, 0.0f);
+            body.gravityScale        = 1;
+            body.velocity            = new Vector2(0.0f, 0.0f);
         
             // Settings back the layer
             this.gameObject.layer = 8;
             Destroy(this);
-
-            Debug.Log("Void");
         }
         else
         {
-            int contactCount = 0;
-            ContactPoint2D[] contactPoints = new ContactPoint2D[1];
-        
-            // Gets the contact points and the normal
-            contactCount = collision.GetContacts(contactPoints);
-
-            Vector2 normal     = contactPoints[0].normal;
-            Vector2 reflection = Vector2.Reflect(velocity.normalized, normal);
-            velocity           = reflection * initialSpeed;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, velocity.normalized, 1000.0f);
+            
+            if(hit)
+            {
+                Vector2 normal     = hit.normal;
+                Vector2 reflection = Vector2.Reflect(velocity.normalized, normal);
+                velocity           = reflection * initialSpeed;
+            }
 
             body.velocity = velocity;
         }

@@ -1173,7 +1173,33 @@ Prefab:
       propertyPath: loadController
       value: 
       objectReference: {fileID: 494350793}
-    m_RemovedComponents: []
+    - target: {fileID: 58065361390898894, guid: 21c32a0b8f655de40b782772348108f3,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.23551106
+      objectReference: {fileID: 0}
+    - target: {fileID: 58065361390898894, guid: 21c32a0b8f655de40b782772348108f3,
+        type: 2}
+      propertyPath: m_Radius
+      value: 2.2019372
+      objectReference: {fileID: 0}
+    - target: {fileID: 58065361390898894, guid: 21c32a0b8f655de40b782772348108f3,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -1.0319122
+      objectReference: {fileID: 0}
+    - target: {fileID: 70700285373189462, guid: 21c32a0b8f655de40b782772348108f3,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 58065361390898894, guid: 21c32a0b8f655de40b782772348108f3,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 58065361390898894, guid: 21c32a0b8f655de40b782772348108f3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 21c32a0b8f655de40b782772348108f3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1896977893

@@ -96,13 +96,10 @@ public class PlayerSkillsController : MonoBehaviour
                 }
 
                 wasHoldingSound = false;
-                soundSKill.initialSpeed     = 10.0f;
+                soundSKill.initialSpeed     = 5.0f;
                 soundSKill.initialDirection = new Vector2(axis.x, axis.y);
                 soundSKill.CastSoundWave();
             }
-
-
-            // TODO check
         }
 
         // The player touched the ground
