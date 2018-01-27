@@ -18,16 +18,14 @@ public class PlayerController : MonoBehaviour {
     private float m_timeCompleteJump = 1.5f;
     [SerializeField]
     private float m_jumpForce = 10;
-    [Header("Other")]
-    [SerializeField]
-    private float m_groundDetectionOffset = 0.1f;
 
     private Collider2D m_collider;
     private Rigidbody2D m_rigidbody;
     private Animator m_animator;
 
     private float m_timeElapsedJump;
-    private float m_distanceToTheGround;
+    private bool m_isGrounded;
+    private GroundDetector m_groundDetector;
 
     #endregion
 
@@ -38,7 +36,15 @@ public class PlayerController : MonoBehaviour {
         m_rigidbody = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
         m_timeElapsedJump = 0;
-        m_distanceToTheGround = m_collider.bounds.extents.y - m_collider.bounds.center.y;
+
+        // Add ground detector
+        Vector3 playerPos = transform.position;
+        transform.position = new Vector3(0, 0, 0);
+        GameObject groundDetector = new GameObject("Ground Detector");
+        groundDetector.transform.parent = transform;
+        groundDetector.transform.position = transform.position + m_collider.bounds.center - new Vector3(0, m_collider.bounds.size.y * transform.localScale.y, 0);
+        m_groundDetector = groundDetector.AddComponent<GroundDetector>();
+        transform.position = playerPos;
     }
 	
 	// Update is called once per frame
@@ -52,8 +58,8 @@ public class PlayerController : MonoBehaviour {
             m_rigidbody.AddForce(new Vector2(-m_rigidbody.velocity.x * 2, 0));
 
         // Jump
-        Debug.Log(IsGrounded());
-        if (Input.GetButton("Jump") && IsGrounded())
+        // Todo fix multi jump
+        if (Input.GetButton("Jump"))
             m_timeElapsedJump += TimeManager.deltaTime;
         else
             m_timeElapsedJump = 0;
@@ -77,8 +83,7 @@ public class PlayerController : MonoBehaviour {
     #region Methods
     public bool IsGrounded()
     {
-        Debug.DrawRay(transform.position, -Vector3.up * (m_distanceToTheGround + m_groundDetectionOffset), Color.blue);
-        return Physics.Raycast(transform.position, -Vector3.up, m_distanceToTheGround + m_groundDetectionOffset);
+        return m_groundDetector.IsGrounded();
     }
 
     #endregion
