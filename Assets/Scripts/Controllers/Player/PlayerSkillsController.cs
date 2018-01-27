@@ -10,14 +10,29 @@ public class PlayerSkillsController : MonoBehaviour
 {
     public  WaveLoadsController   loadController;
     public  AnglePickerController pickerController;
-    private SkillTimeFreeze       timeFreezeSkill;
+
+    private bool wasHoldingLight;
+    private bool wasHoldingSound;
+    private bool wasHoldingMagnet;
+
+    private SkillLight       lighSkill;
+    private SkillTimeFreeze  timeFreezeSkill;
+    private PlayerController playerController;
 
     /**
      * Called at start
      */
     void Start ()
     {
-        timeFreezeSkill = GetComponent<SkillTimeFreeze>();
+        lighSkill        = GetComponent<SkillLight>();
+        timeFreezeSkill  = GetComponent<SkillTimeFreeze>();
+        playerController = GetComponent<PlayerController>();
+
+        wasHoldingLight  = false;
+        wasHoldingSound  = false;
+        wasHoldingMagnet = false;
+
+        lighSkill.enabled = false;
     }
 	
 	/**
@@ -52,7 +67,29 @@ public class PlayerSkillsController : MonoBehaviour
             if (Input.GetButton("Form1"))
             {
                 // The player is holding the light skill
+                wasHoldingLight = true;
             }
+            else if(wasHoldingLight)
+            {
+                wasHoldingLight = false;
+                loadController.RemoveLoad();
+
+                lighSkill.enabled          = true;
+                lighSkill.initialDirection = pickerController.GetAngle();
+
+                // Finally Casts the wave
+                lighSkill.CastLightWave();
+            }
+
+
+            // TODO check
+        }
+
+        // The player touched the ground
+        // So we can reload the wave loads
+        if(playerController.IsGrounded())
+        {
+            loadController.Reload();
         }
     }
 }

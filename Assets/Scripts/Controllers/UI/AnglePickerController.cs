@@ -36,6 +36,24 @@ public class AnglePickerController : MonoBehaviour
                 arrow.transform.eulerAngles.x,
                 arrow.transform.eulerAngles.y,
                 (Mathf.Atan2(axis.y, axis.x) - Mathf.PI / 2.0f) * Mathf.Rad2Deg);
+
+            Raycast(transform.position, axis);
+        }
+    }
+
+    private void Raycast(Vector2 start, Vector2 dir)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(start, dir, 1000.0f);
+        Debug.DrawRay(start, dir * 10000.0f, Color.red);
+
+        if (hit)
+        {
+            Debug.DrawRay(start, hit.point - start, Color.blue);
+        
+            Vector2 normal     = hit.normal;
+            Vector2 reflection = Vector2.Reflect(dir, normal);
+            
+            Raycast(hit.point, reflection);
         }
     }
 
@@ -52,6 +70,8 @@ public class AnglePickerController : MonoBehaviour
      */
     public Vector3 GetAngle()
     {
-        return arrow.transform.rotation.eulerAngles;
+        return new Vector2(
+            Mathf.Cos(arrow.transform.rotation.eulerAngles.z),
+            Mathf.Sin(arrow.transform.rotation.eulerAngles.z));
     }
 }
