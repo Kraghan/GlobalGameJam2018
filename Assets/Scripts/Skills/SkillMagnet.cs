@@ -6,7 +6,9 @@ public class SkillMagnet : MonoBehaviour {
 
     #region Attributes
     [SerializeField]
-    private float magnetRange = 15;
+    private float m_magnetRange = 15;
+    [SerializeField]
+    private MagnetRay m_magnetRay;
     #endregion
 
     #region Monobehaviour
@@ -25,9 +27,13 @@ public class SkillMagnet : MonoBehaviour {
 
     #region Methods
 
-    public void CastMagnetWave()
+    public void CastMagnetWave(Vector2 initialDirection)
     {
-
+        MagnetRay ray = Instantiate(m_magnetRay);
+        ray.transform.position = transform.position;
+        ray.SetDirection(initialDirection);
+        ray.SetDistanceMax(m_magnetRange);
+        ray.SetInitPoint(transform.position);
     }
 
     #endregion

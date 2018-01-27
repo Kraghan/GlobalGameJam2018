@@ -2,32 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagnetRay : MonoBehaviour {
+public class MagnetRay : MonoBehaviour
+{
 
     #region Attributes
     [SerializeField]
-    private float rayTrailLength = 5;
+    private float m_speed = 1;
     private Vector2 m_direction;
-    private float m_speed;
     private Vector2 m_initPoint;
     private float m_distanceMax;
     #endregion
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-        //transform.position = new Vector2(Mathf.Cos()*m_speed,Mathf.Sin()*m_speed);
-	}
+        float angle = (Vector2.Angle(m_direction, Vector2.right) * Mathf.PI) / 180;
+        if (m_direction.y < 0)
+            angle *= -1; 
+        transform.position = transform.position + new Vector3(Mathf.Cos(angle) * m_speed, Mathf.Sin(angle) * m_speed,0);
+        if (Vector2.Distance(m_initPoint, transform.position) >= m_distanceMax)
+            Destroy(gameObject);
+
+    }
 
     #region Methods
     public void SetDirection(Vector2 direction)
     {
         m_direction = direction;
-    }
-
-    public void SetSpeed(float speed)
-    {
-        m_speed = speed;
     }
 
     public void SetInitPoint(Vector2 initPoint)

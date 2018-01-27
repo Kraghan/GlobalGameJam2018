@@ -15,7 +15,7 @@ public class PlayerSkillsController : MonoBehaviour
     private bool wasHoldingSound;
     private bool wasHoldingMagnet;
 
-    private SkillLight       lighSkill;
+    private SkillLight       lightSkill;
     private SkillSound       soundSKill;
     private SkillMagnet      magnetSKill;
     private SkillTimeFreeze  timeFreezeSkill;
@@ -70,16 +70,17 @@ public class PlayerSkillsController : MonoBehaviour
             }
             else if(wasHoldingLight)
             {
-                if(GetComponent<SkillLight>() == null)
+                lightSkill = GetComponent<SkillLight>();
+                if (GetComponent<SkillLight>() == null)
                 {
                     loadController.RemoveLoad();
-                    lighSkill = this.gameObject.AddComponent<SkillLight>();
+                    lightSkill = this.gameObject.AddComponent<SkillLight>();
                 }
             
                 wasHoldingLight = false;
-                lighSkill.initialSpeed     = 10.0f;
-                lighSkill.initialDirection = new Vector2(axis.x, axis.y);
-                lighSkill.CastLightWave();
+                lightSkill.initialSpeed     = 10.0f;
+                lightSkill.initialDirection = new Vector2(axis.x, axis.y);
+                lightSkill.CastLightWave();
             }
 
             // Sound
@@ -90,7 +91,8 @@ public class PlayerSkillsController : MonoBehaviour
             else if (wasHoldingSound)
             {
                 Debug.Log("Casting sound wave");
-                if (GetComponent<SkillSound>() == null)
+                soundSKill = GetComponent<SkillSound>();
+                if (soundSKill == null)
                 {
                     loadController.RemoveLoad();
                     soundSKill = this.gameObject.AddComponent<SkillSound>();
@@ -109,8 +111,8 @@ public class PlayerSkillsController : MonoBehaviour
             }
             else if (wasHoldingMagnet)
             {
-                Debug.Log("Casting magnet wave");
-                if (GetComponent<SkillMagnet>() == null)
+                magnetSKill = GetComponent<SkillMagnet>();
+                if (magnetSKill == null)
                 {
                     loadController.RemoveLoad();
                     magnetSKill = this.gameObject.AddComponent<SkillMagnet>();
@@ -118,9 +120,8 @@ public class PlayerSkillsController : MonoBehaviour
 
                 wasHoldingMagnet = false;
 
-                soundSKill.initialSpeed = 5.0f;
-                soundSKill.initialDirection = new Vector2(axis.x, axis.y);
-                magnetSKill.CastMagnetWave();
+                Vector2 initialDirection = new Vector2(axis.x, axis.y);
+                magnetSKill.CastMagnetWave(initialDirection);
             }
 
 
