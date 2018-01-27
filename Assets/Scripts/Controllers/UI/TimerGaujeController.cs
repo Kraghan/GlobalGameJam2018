@@ -86,7 +86,7 @@ public class TimerGaujeController : MonoBehaviour
     {
         if (isHolding)
         {
-            gaujeFillImage.fillAmount -= Time.deltaTime / gaujeDuration;
+            gaujeFillImage.fillAmount -= TimeManager.UnscaledDeltaTime / gaujeDuration;
 
             if(gaujeFillImage.fillAmount == 0.0f)
             {
@@ -134,7 +134,7 @@ public class TimerGaujeController : MonoBehaviour
      */
     private IEnumerator WaitForRefillCoroutine()
     {
-        yield return new WaitForSeconds(gaujeRefillDelay);
+        yield return new WaitForSecondsRealtime(gaujeRefillDelay);
         gaujeState = EGaujeState.Filled;
     }
 
@@ -147,7 +147,7 @@ public class TimerGaujeController : MonoBehaviour
         {
             if(gaujeState == EGaujeState.Filled && gaujeFillImage.fillAmount < 1.0f) 
             {
-                gaujeFillImage.fillAmount += Time.deltaTime / gaujeRefillDuration;
+                gaujeFillImage.fillAmount += TimeManager.UnscaledDeltaTime / gaujeRefillDuration;
                 yield return new WaitForEndOfFrame();
             }
 
@@ -162,7 +162,7 @@ public class TimerGaujeController : MonoBehaviour
     {
         while (gaujeFillImage.fillAmount != 1.0f)
         {
-            gaujeFillImage.fillAmount += Time.deltaTime / gaujeRefillDuration;
+            gaujeFillImage.fillAmount += TimeManager.UnscaledDeltaTime / gaujeRefillDuration;
             yield return new WaitForEndOfFrame();
         }
 

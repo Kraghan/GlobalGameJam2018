@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour {
     private bool m_isGrounded;
     private GroundDetector m_groundDetector;
 
+    private SkillTimeFreeze timeFreezeSkill;
+
     #endregion
 
     #region Monobehaviour
@@ -45,13 +47,15 @@ public class PlayerController : MonoBehaviour {
         groundDetector.transform.position = transform.position + m_collider.bounds.center - new Vector3(0, m_collider.bounds.size.y * transform.localScale.y, 0);
         m_groundDetector = groundDetector.AddComponent<GroundDetector>();
         transform.position = playerPos;
+
+        timeFreezeSkill = GetComponent<SkillTimeFreeze>();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         // Movement 
-        float xToAdd = Input.GetAxis("Horizontal") * m_acceleration * TimeManager.deltaTime;
+        float xToAdd = Input.GetAxis("Horizontal") * m_acceleration * TimeManager.DeltaTime;
         if (Mathf.Abs(m_rigidbody.velocity.x) < m_speed)
             m_rigidbody.AddForce(new Vector2(xToAdd, 0));
         if (xToAdd == 0)
@@ -60,7 +64,7 @@ public class PlayerController : MonoBehaviour {
         // Jump
         // Todo fix multi jump
         if (Input.GetButton("Jump"))
-            m_timeElapsedJump += TimeManager.deltaTime;
+            m_timeElapsedJump += TimeManager.DeltaTime;
         else
             m_timeElapsedJump = 0;
 
@@ -69,6 +73,12 @@ public class PlayerController : MonoBehaviour {
             float yToAdd = Mathf.Lerp(m_jumpForce,0,m_timeElapsedJump/m_timeCompleteJump);
             m_rigidbody.AddForce(new Vector2(0, yToAdd));
         }
+
+        if(Input.GetAxis("TimeFreeze") >= 0.5f)
+        {
+            timeFreezeSkill.Freeze();
+        }
+
 
         // Animator
         m_animator.SetBool("IsGrounded", IsGrounded());

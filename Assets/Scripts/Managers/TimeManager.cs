@@ -8,23 +8,33 @@ using System.Collections.Generic;
  */
 public class TimeManager : MonoBehaviour
 {
-    public static float deltaTime;
-    public static float timeScale;
-
-    /**
-     * Called at start
-     */
-	void Start ()
+    public static float DeltaTime
     {
-        TimeManager.deltaTime = 0.0f;
-        TimeManager.timeScale = 1.0f;
+        get
+        {
+            return Time.deltaTime;
+        }
     }
-	
-    /**
-     * Called each update
-     */
-	void Update ()
+
+    public static float UnscaledDeltaTime
     {
-        TimeManager.deltaTime = TimeManager.timeScale * Time.deltaTime;
+        get
+        {
+            return Time.unscaledDeltaTime;
+        }
+    }
+
+    public static float TimeScale
+    {
+        get
+        {
+            return Time.timeScale;
+        }
+
+        set
+        {
+            Time.timeScale      = value;
+            Time.fixedDeltaTime = 0.02F * Time.timeScale;
+        }
     }
 }
