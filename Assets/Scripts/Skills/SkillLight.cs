@@ -33,7 +33,10 @@ public class SkillLight : MonoBehaviour
      */
 	void Update ()
     {
-        // None
+        if(Input.GetButton("CancelPower"))
+        {
+            DisableSkill();
+        }
     }
 
     /**
@@ -66,14 +69,7 @@ public class SkillLight : MonoBehaviour
         }
         else
         {
-            playerController.enabled = true;
-            body.gravityScale        = storedGravity;
-            body.velocity            = new Vector2(0.0f, 0.0f);
-
-            // Settings back the layer
-            this.gameObject.layer = 8;
-            m_animator.SetInteger("Form", 0);
-            Destroy(this);
+            DisableSkill();
         }
     }
     
@@ -86,7 +82,8 @@ public class SkillLight : MonoBehaviour
         velocity = initialDirection * initialSpeed;
 
         // Body settings
-        storedGravity = body.gravityScale;
+        if(storedGravity == 0)
+            storedGravity = body.gravityScale;
         body.gravityScale = 0;
         body.velocity     = velocity;
 
@@ -94,5 +91,17 @@ public class SkillLight : MonoBehaviour
         this.gameObject.layer = 9;
 
         playerController.enabled = false;
+    }
+
+    private void DisableSkill()
+    {
+        playerController.enabled = true;
+        body.gravityScale = storedGravity;
+        body.velocity = new Vector2(0.0f, 0.0f);
+
+        // Settings back the layer
+        this.gameObject.layer = 8;
+        m_animator.SetInteger("Form", 0);
+        Destroy(this);
     }
 }

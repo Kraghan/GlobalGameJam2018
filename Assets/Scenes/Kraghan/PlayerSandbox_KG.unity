@@ -1215,11 +1215,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114876707105906488, guid: 21c32a0b8f655de40b782772348108f3,
-        type: 2}
-      propertyPath: loadController
-      value: 
-      objectReference: {fileID: 494350793}
     - target: {fileID: 114822789839518946, guid: 21c32a0b8f655de40b782772348108f3,
         type: 2}
       propertyPath: gaujeController
@@ -1227,17 +1222,10 @@ Prefab:
       objectReference: {fileID: 337922259}
     - target: {fileID: 114876707105906488, guid: 21c32a0b8f655de40b782772348108f3,
         type: 2}
-      propertyPath: magnetRay
+      propertyPath: loadController
       value: 
-      objectReference: {fileID: 114386577128931716, guid: fa639363ba208324aaf6dbc45506b600,
-        type: 2}
-    - target: {fileID: 114876707105906488, guid: 21c32a0b8f655de40b782772348108f3,
-        type: 2}
-      propertyPath: soundDistance
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114100333140279388, guid: 21c32a0b8f655de40b782772348108f3, type: 2}
+      objectReference: {fileID: 494350793}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21c32a0b8f655de40b782772348108f3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1467017048

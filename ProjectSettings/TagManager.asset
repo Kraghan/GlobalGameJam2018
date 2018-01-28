@@ -49,4 +49,18 @@ TagManager:
     locked: 0
   - name: Other
     uniqueID: 1795432687
+  - name: Background
+    uniqueID: 4095221783
+    locked: 0
+  - name: Decoration
+    uniqueID: 3805784003
+    locked: 0
+  - name: Level
+    uniqueID: 472923061
+    locked: 0
+  - name: Interactive
+    uniqueID: 3550047099
+    locked: 0
+  - name: Player
+    uniqueID: 1074218431
     locked: 0

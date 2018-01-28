@@ -40,7 +40,8 @@ public class SkillSound : MonoBehaviour
      */
     void Update()
     {
-        if(Vector2.Distance(initialPoint,transform.position) + distanceReachedBeforeBounce >= distanceToDisable)
+        if(Vector2.Distance(initialPoint,transform.position) + distanceReachedBeforeBounce >= distanceToDisable
+            || Input.GetButton("CancelPower"))
         {
             DisableSkill();
         }
@@ -91,7 +92,8 @@ public class SkillSound : MonoBehaviour
         velocity = initialDirection * initialSpeed;
 
         // Body settings
-        storedGravity = body.gravityScale;
+        if (storedGravity == 0)
+            storedGravity = body.gravityScale;
         body.gravityScale = 0;
         body.velocity = velocity;
         
