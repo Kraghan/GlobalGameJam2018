@@ -25,8 +25,7 @@ public class PlayerController : MonoBehaviour {
 
     private float m_timeElapsedJump;
     private bool m_isGrounded;
-    private GroundDetector m_groundDetector;
-    private bool m_canJump;
+    private float m_distToGround;
     #endregion
 
     #region Monobehaviour
@@ -36,17 +35,10 @@ public class PlayerController : MonoBehaviour {
         m_rigidbody = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
         m_timeElapsedJump = 0;
-
-        // Add ground detector
-        Vector3 playerPos = transform.position;
-        transform.position = new Vector3(0, 0, 0);
-        GameObject groundDetector = new GameObject("Ground Detector");
-        groundDetector.transform.parent = transform;
-        groundDetector.transform.position = transform.position + m_collider.bounds.center - new Vector3(0, m_collider.bounds.size.y * transform.localScale.y, 0);
-        groundDetector.transform.localScale = new Vector3(0.3f, groundDetector.transform.localScale.y, groundDetector.transform.localScale.z);
-        m_groundDetector = groundDetector.AddComponent<GroundDetector>();
-        transform.position = playerPos;
-        m_canJump = true;
+        Vector3 oldPos = transform.position;
+        transform.position = Vector3.zero;
+        m_distToGround = m_collider.bounds.extents.y - m_collider.bounds.center.y;
+        transform.position = oldPos;
     }
 	
 	// Update is called once per frame
@@ -64,7 +56,6 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButton("Jump"))
         {
             m_timeElapsedJump += TimeManager.DeltaTime;
-            m_canJump = false;
         }
         else
         {
@@ -97,7 +88,8 @@ public class PlayerController : MonoBehaviour {
     #region Methods
     public bool IsGrounded()
     {
-        return m_groundDetector.IsGrounded();
+        Debug.DrawRay(transform.position, -new Vector3(0,m_distToGround + 0.1f,0), Color.green);
+        return Physics2D.Raycast(transform.position, -Vector3.up, m_distToGround + 0.1f);
     }
 
     public void PlaySound(string soundName)

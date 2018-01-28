@@ -27,5 +27,6 @@ public class MoveObject : Action {
     {
         m_initialPosition = transform.position;
         m_triggered = true;
+
     }
 }

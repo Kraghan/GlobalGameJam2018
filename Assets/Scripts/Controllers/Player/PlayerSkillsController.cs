@@ -39,16 +39,15 @@ public class PlayerSkillsController : MonoBehaviour
      */
 	void Update ()
     {
-        if (Input.GetAxis("TimeFreeze") >= 0.5f)
-        {
-            timeFreezeSkill.Freeze();
-        }
 
         if (loadController.GetAvailableLoadCount() > 0)
         {
             Vector2 axis = Vector2.zero;
             axis.x = Input.GetAxis("Horizontal");
             axis.y = Input.GetAxis("Vertical");
+
+            if (axis == Vector2.zero)
+                axis = new Vector2(0, 1);
 
             if(Input.GetButton("Form1") || 
                Input.GetButton("Form2") || 
@@ -67,6 +66,7 @@ public class PlayerSkillsController : MonoBehaviour
             if (Input.GetButton("Form1"))
             {
                 wasHoldingLight = true;
+                timeFreezeSkill.Freeze();
             }
             else if(wasHoldingLight)
             {
@@ -81,12 +81,14 @@ public class PlayerSkillsController : MonoBehaviour
                 lightSkill.initialSpeed     = 10.0f;
                 lightSkill.initialDirection = new Vector2(axis.x, axis.y);
                 lightSkill.CastLightWave();
+                AkSoundEngine.PostEvent("LightDash", gameObject);
             }
 
             // Sound
             if (Input.GetButton("Form2"))
             {
                 wasHoldingSound = true;
+                timeFreezeSkill.Freeze();
             }
             else if (wasHoldingSound)
             {
@@ -102,12 +104,14 @@ public class PlayerSkillsController : MonoBehaviour
                 soundSKill.initialSpeed     = 5.0f;
                 soundSKill.initialDirection = new Vector2(axis.x, axis.y);
                 soundSKill.CastSoundWave();
+                AkSoundEngine.PostEvent("SoundDash", gameObject);
             }
 
             // Magnet
             if (Input.GetButton("Form3"))
             {
                 wasHoldingMagnet = true;
+                timeFreezeSkill.Freeze();
             }
             else if (wasHoldingMagnet)
             {
@@ -122,6 +126,7 @@ public class PlayerSkillsController : MonoBehaviour
 
                 Vector2 initialDirection = new Vector2(axis.x, axis.y);
                 magnetSKill.CastMagnetWave(initialDirection);
+                AkSoundEngine.PostEvent("Magnet_Sound", gameObject);
             }
 
 
