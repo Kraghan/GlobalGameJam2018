@@ -12,12 +12,14 @@ public class SkillLight : MonoBehaviour
     public  float            initialSpeed;
     public  Vector2          initialDirection;
     public  Animator         m_animator;
+    public  TrailRenderer    trail; 
+
     private PlayerController playerController;
 
     // Physics
     private Rigidbody2D body;
     private Vector2     velocity;
-    private float storedGravity;
+    private float       storedGravity;
 
     /**
      * Called at start
@@ -90,6 +92,14 @@ public class SkillLight : MonoBehaviour
         // Setting the player layer
         this.gameObject.layer = 9;
 
+        if(trail == null)
+        {
+            trail = GameObject.FindWithTag("Trail").GetComponent<TrailRenderer>();
+        }
+
+        StartCoroutine("Cooldown");
+
+        trail.enabled = true;
         playerController.enabled = false;
     }
 
@@ -102,6 +112,19 @@ public class SkillLight : MonoBehaviour
         // Settings back the layer
         this.gameObject.layer = 8;
         m_animator.SetInteger("Form", 0);
+
+        if (trail == null)
+        {
+            trail = GameObject.FindWithTag("Trail").GetComponent<TrailRenderer>();
+        }
+
+        trail.enabled = false;
         Destroy(this);
+    }
+
+    private IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(1);
+        DisableSkill();
     }
 }
