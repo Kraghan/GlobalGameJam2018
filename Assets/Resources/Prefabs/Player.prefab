@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 114876707105906488}
   - component: {fileID: 114822789839518946}
   - component: {fileID: 96661895815009258}
+  - component: {fileID: 114100333140279388}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -104,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1662116668553364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.29, z: 0}
+  m_LocalPosition: {x: -2.37, y: -1.58, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4107125705788520}
@@ -196,7 +197,7 @@ TrailRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1662116668553364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -276,6 +277,20 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
+--- !u!114 &114100333140279388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1662116668553364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85fdf74eaa443e4281be745f26885a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_magnetRange: 10
+  m_magnetRay: {fileID: 114386577128931716, guid: fa639363ba208324aaf6dbc45506b600,
+    type: 2}
 --- !u!114 &114174576925123824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -303,8 +318,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 5
   m_acceleration: 500
-  m_timeCompleteJump: 0.75
-  m_jumpForce: 20
+  m_timeCompleteJump: 0.25
+  m_jumpForce: 40
 --- !u!114 &114822789839518946
 MonoBehaviour:
   m_ObjectHideFlags: 1

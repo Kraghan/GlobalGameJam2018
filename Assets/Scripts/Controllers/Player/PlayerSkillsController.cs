@@ -20,6 +20,7 @@ public class PlayerSkillsController : MonoBehaviour
     private SkillMagnet      magnetSKill;
     private SkillTimeFreeze  timeFreezeSkill;
     private PlayerController playerController;
+    private Animator         m_animator;
 
     /**
      * Called at start
@@ -32,6 +33,7 @@ public class PlayerSkillsController : MonoBehaviour
         wasHoldingLight  = false;
         wasHoldingSound  = false;
         wasHoldingMagnet = false;
+        m_animator = GetComponent<Animator>();
     }
 	
 	/**
@@ -78,10 +80,12 @@ public class PlayerSkillsController : MonoBehaviour
                 }
             
                 wasHoldingLight = false;
+                lightSkill.m_animator = m_animator;
                 lightSkill.initialSpeed     = 10.0f;
                 lightSkill.initialDirection = new Vector2(axis.x, axis.y);
                 lightSkill.CastLightWave();
                 AkSoundEngine.PostEvent("LightDash", gameObject);
+                m_animator.SetInteger("Form", 1);
             }
 
             // Sound
@@ -101,10 +105,13 @@ public class PlayerSkillsController : MonoBehaviour
                 }
 
                 wasHoldingSound = false;
+
+                soundSKill.m_animator = m_animator;
                 soundSKill.initialSpeed     = 5.0f;
                 soundSKill.initialDirection = new Vector2(axis.x, axis.y);
                 soundSKill.CastSoundWave();
                 AkSoundEngine.PostEvent("SoundDash", gameObject);
+                m_animator.SetInteger("Form", 2);
             }
 
             // Magnet

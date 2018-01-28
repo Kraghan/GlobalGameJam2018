@@ -11,6 +11,7 @@ public class MagnetRay : MonoBehaviour
     private Vector2 m_direction;
     private Vector2 m_initPoint;
     private float m_distanceMax;
+    private bool once = true;
     #endregion
 
     // Update is called once per frame
@@ -22,6 +23,12 @@ public class MagnetRay : MonoBehaviour
         transform.position = transform.position + new Vector3(Mathf.Cos(angle) * m_speed, Mathf.Sin(angle) * m_speed,0);
         if (Vector2.Distance(m_initPoint, transform.position) >= m_distanceMax)
             Destroy(gameObject);
+
+        if (once)
+        {
+            transform.Rotate(new Vector3(0, 0, Vector2.Angle(m_direction, Vector2.right) + 90));
+            once = false;
+        }
 
     }
 

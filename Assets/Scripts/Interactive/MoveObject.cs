@@ -5,18 +5,18 @@ using UnityEngine;
 public class MoveObject : Action {
     
     [SerializeField]
-    private Vector2 m_destination;
+    protected Vector2 m_destination;
     [SerializeField]
-    private float m_timeToComplete;
+    protected float m_timeToComplete;
 
-    private bool m_triggered;
-    private float m_timeElapsed;
+    protected bool m_triggered;
+    protected float m_timeElapsed;
     private Vector2 m_initialPosition;
 
 
-    private void Update()
+    protected virtual void Update()
     {
-        if (m_triggered)
+        if (m_triggered && m_timeElapsed <= m_timeToComplete)
         {
             m_timeElapsed += TimeManager.DeltaTime;
             transform.position = Vector2.Lerp(m_initialPosition, m_destination, m_timeElapsed/m_timeToComplete);

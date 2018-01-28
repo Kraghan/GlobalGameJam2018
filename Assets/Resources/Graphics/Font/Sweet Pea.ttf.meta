@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 085dd45b6f67c3245a43af3e3d2e834e
+timeCreated: 1517126769
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sweet Pea
+  fontNames:
+  - Sweet Pea
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

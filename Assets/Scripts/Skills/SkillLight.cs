@@ -11,6 +11,7 @@ public class SkillLight : MonoBehaviour
 {
     public  float            initialSpeed;
     public  Vector2          initialDirection;
+    public  Animator         m_animator;
     private PlayerController playerController;
 
     // Physics
@@ -70,6 +71,7 @@ public class SkillLight : MonoBehaviour
 
             // Settings back the layer
             this.gameObject.layer = 8;
+            m_animator.SetInteger("Form", 0);
             Destroy(this);
         }
     }

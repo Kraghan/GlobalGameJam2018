@@ -8,6 +8,8 @@ public class Switch : MonoBehaviour {
     #region Attributes
     [SerializeField]
     private Action m_action;
+    [SerializeField]
+    private Sprite m_spriteActivated;
 
     private bool m_activated = false;
     #endregion
@@ -20,8 +22,7 @@ public class Switch : MonoBehaviour {
         {
             // Set switch to triggered
             SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
-            renderer.color = new Color(0, 1, 0);
-            // TODO !
+            renderer.sprite = m_spriteActivated;
 
             m_action.Trigger();
             m_activated = true;
