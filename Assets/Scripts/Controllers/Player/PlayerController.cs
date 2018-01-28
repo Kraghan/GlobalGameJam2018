@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour {
     private float m_timeElapsedJump;
     private bool m_isGrounded;
     private float m_distToGround;
+    private Vector2 m_lastCheckPoint;
     #endregion
 
     #region Monobehaviour
@@ -39,11 +40,18 @@ public class PlayerController : MonoBehaviour {
         transform.position = Vector3.zero;
         m_distToGround = m_collider.bounds.extents.y - m_collider.bounds.center.y;
         transform.position = oldPos;
+
+        SetLastCheckPoint();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        if (Input.GetButton("ReturnCheckpoint"))
+        {
+            transform.position = m_lastCheckPoint;
+            Camera.main.transform.position = new Vector3(transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
+        }
         // Movement 
         float xToAdd = Input.GetAxis("Horizontal") * m_acceleration * TimeManager.DeltaTime;
         if (Mathf.Abs(m_rigidbody.velocity.x) < m_speed)
@@ -67,7 +75,6 @@ public class PlayerController : MonoBehaviour {
                 m_timeElapsedJump = m_timeCompleteJump;
             
         }
-            
 
         if (m_timeElapsedJump > 0 && m_timeElapsedJump < m_timeCompleteJump)
         {
@@ -95,6 +102,11 @@ public class PlayerController : MonoBehaviour {
     public void PlaySound(string soundName)
     {
         AkSoundEngine.PostEvent(soundName, gameObject);
+    }
+
+    public void SetLastCheckPoint()
+    {
+        m_lastCheckPoint = transform.position;
     }
 
     #endregion

@@ -91,7 +91,8 @@ public class SkillSound : MonoBehaviour
         velocity = initialDirection * initialSpeed;
 
         // Body settings
-        storedGravity = body.gravityScale;
+        if (storedGravity == 0)
+            storedGravity = body.gravityScale;
         body.gravityScale = 0;
         body.velocity = velocity;
         
