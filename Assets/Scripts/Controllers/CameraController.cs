@@ -26,11 +26,18 @@ public class CameraController : MonoBehaviour {
         Vector2 posOnScreen = m_camera.WorldToScreenPoint(m_player.transform.position);
         if (posOnScreen.x <= deadZoneSize)
         {
-            transform.position = transform.position - new Vector3(m_scrollSpeed * TimeManager.DeltaTime,0,0);
+            if(posOnScreen.x <= deadZoneSize/2)
+                transform.position = transform.position - new Vector3(2 * m_scrollSpeed * TimeManager.DeltaTime,0,0);
+            else
+                transform.position = transform.position - new Vector3(m_scrollSpeed * TimeManager.DeltaTime, 0, 0);
         }
         else if (posOnScreen.x >= Screen.width - deadZoneSize)
         {
-            transform.position = transform.position + new Vector3(m_scrollSpeed * TimeManager.DeltaTime, 0, 0);
+            if (posOnScreen.x >= (Screen.width - deadZoneSize/2))
+                transform.position = transform.position + new Vector3(2 * m_scrollSpeed * TimeManager.DeltaTime, 0, 0);
+            else
+                transform.position = transform.position + new Vector3(m_scrollSpeed * TimeManager.DeltaTime, 0, 0);
+
         }
     }
 }
