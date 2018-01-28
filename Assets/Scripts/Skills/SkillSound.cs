@@ -11,17 +11,17 @@ public class SkillSound : MonoBehaviour
 {
     public float             initialSpeed;
     public Vector2           initialDirection;
+    public Vector2           initialPoint;
     public Animator          m_animator;
+    public float             distanceToDisable;
     private PlayerController playerController;
 
     // Physics
     public float        magnitude;
     private Rigidbody2D body;
     private Vector2     velocity;
-    private float amplitudeY = 1f;
-    private float frequence = 100;
-    private float angle = 0;
-    private float xPos;
+
+    private float distanceReachedBeforeBounce;
 
     /**
      * Called at start
@@ -31,22 +31,18 @@ public class SkillSound : MonoBehaviour
         magnitude        = 1.0f;
         body             = GetComponent<Rigidbody2D>();
         playerController = GetComponent<PlayerController>();
-        xPos = 0;
-    }
+        distanceReachedBeforeBounce = 0;
+}
 
     /**
      * Called each update
      */
     void Update()
     {
-        /*xPos = Mathf.PingPong(Time.time,2) - 1;
-        float cos = Mathf.Cos(angle);
-        float sin = Mathf.Sin(angle);
-
-        float y = sin * (xPos) + cos * Mathf.Sin(xPos * frequence) * amplitudeY;
-        float x = cos * (xPos) - sin * Mathf.Sin(xPos * frequence) * amplitudeY;
-
-        body.velocity += new Vector2(x, y);*/
+        if(Vector2.Distance(initialPoint,transform.position) + distanceReachedBeforeBounce >= distanceToDisable)
+        {
+            DisableSkill();
+        }
 
     }
 
@@ -66,14 +62,7 @@ public class SkillSound : MonoBehaviour
     {
         if (collision.gameObject.tag == "Void")
         {
-            playerController.enabled = true;
-            body.gravityScale        = 1;
-            body.velocity            = new Vector2(0.0f, 0.0f);
-        
-            // Settings back the layer
-            this.gameObject.layer = 8;
-            m_animator.SetInteger("Form", 0);
-            Destroy(this);
+            DisableSkill();
         }
         else
         {
@@ -84,6 +73,7 @@ public class SkillSound : MonoBehaviour
                 Vector2 normal     = hit.normal;
                 Vector2 reflection = Vector2.Reflect(velocity.normalized, normal);
                 velocity           = reflection * initialSpeed;
+                distanceReachedBeforeBounce += Vector2.Distance(initialPoint, transform.position);
             }
 
             body.velocity = velocity;
@@ -107,5 +97,17 @@ public class SkillSound : MonoBehaviour
         this.gameObject.layer = 10;
         
         playerController.enabled = false;
+    }
+
+    private void DisableSkill()
+    {
+        playerController.enabled = true;
+        body.gravityScale = 1;
+        body.velocity = new Vector2(0.0f, 0.0f);
+
+        // Settings back the layer
+        this.gameObject.layer = 8;
+        m_animator.SetInteger("Form", 0);
+        Destroy(this);
     }
 }

@@ -22,6 +22,17 @@ public class PlayerSkillsController : MonoBehaviour
     private PlayerController playerController;
     private Animator         m_animator;
 
+    [Header("Sound form")]
+    public float soundSpeed = 5;
+    public float soundDistance = 10;
+
+    [Header("Light form")]
+    public float lightSpeed = 10;
+
+    [Header("Magnet form")]
+    public MagnetRay magnetRay;
+    public float rayDistance = 10;
+
     /**
      * Called at start
      */
@@ -75,13 +86,13 @@ public class PlayerSkillsController : MonoBehaviour
                 lightSkill = GetComponent<SkillLight>();
                 if (GetComponent<SkillLight>() == null)
                 {
-                    loadController.RemoveLoad();
                     lightSkill = this.gameObject.AddComponent<SkillLight>();
                 }
-            
+                loadController.RemoveLoad();
+
                 wasHoldingLight = false;
                 lightSkill.m_animator = m_animator;
-                lightSkill.initialSpeed     = 10.0f;
+                lightSkill.initialSpeed     = lightSpeed;
                 lightSkill.initialDirection = new Vector2(axis.x, axis.y);
                 lightSkill.CastLightWave();
                 AkSoundEngine.PostEvent("LightDash", gameObject);
@@ -100,15 +111,17 @@ public class PlayerSkillsController : MonoBehaviour
                 soundSKill = GetComponent<SkillSound>();
                 if (soundSKill == null)
                 {
-                    loadController.RemoveLoad();
                     soundSKill = this.gameObject.AddComponent<SkillSound>();
                 }
+                loadController.RemoveLoad();
 
                 wasHoldingSound = false;
 
                 soundSKill.m_animator = m_animator;
-                soundSKill.initialSpeed     = 5.0f;
+                soundSKill.initialSpeed     = soundSpeed;
                 soundSKill.initialDirection = new Vector2(axis.x, axis.y);
+                soundSKill.initialPoint = transform.position;
+                soundSKill.distanceToDisable = soundDistance;
                 soundSKill.CastSoundWave();
                 AkSoundEngine.PostEvent("SoundDash", gameObject);
                 m_animator.SetInteger("Form", 2);
@@ -125,13 +138,15 @@ public class PlayerSkillsController : MonoBehaviour
                 magnetSKill = GetComponent<SkillMagnet>();
                 if (magnetSKill == null)
                 {
-                    loadController.RemoveLoad();
                     magnetSKill = this.gameObject.AddComponent<SkillMagnet>();
                 }
+                loadController.RemoveLoad();
 
                 wasHoldingMagnet = false;
 
                 Vector2 initialDirection = new Vector2(axis.x, axis.y);
+                magnetSKill.m_magnetRay = magnetRay;
+                magnetSKill.m_magnetRay.SetDistanceMax(rayDistance);
                 magnetSKill.CastMagnetWave(initialDirection);
                 AkSoundEngine.PostEvent("Magnet_Sound", gameObject);
             }

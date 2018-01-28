@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 114876707105906488}
   - component: {fileID: 114822789839518946}
   - component: {fileID: 96661895815009258}
-  - component: {fileID: 114100333140279388}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -277,20 +276,6 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &114100333140279388
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1662116668553364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f85fdf74eaa443e4281be745f26885a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_magnetRange: 10
-  m_magnetRay: {fileID: 114386577128931716, guid: fa639363ba208324aaf6dbc45506b600,
-    type: 2}
 --- !u!114 &114174576925123824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -346,6 +331,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadController: {fileID: 0}
   pickerController: {fileID: 114174576925123824}
+  soundSpeed: 5
+  soundDistance: 10
+  lightSpeed: 10
+  magnetRay: {fileID: 114386577128931716, guid: fa639363ba208324aaf6dbc45506b600,
+    type: 2}
+  rayDistance: 10
 --- !u!212 &212642047255630102
 SpriteRenderer:
   m_ObjectHideFlags: 1

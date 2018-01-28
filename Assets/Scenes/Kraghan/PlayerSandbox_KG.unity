@@ -697,7 +697,7 @@ Transform:
   m_GameObject: {fileID: 1023350764}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -3.85, z: 0}
-  m_LocalScale: {x: 100, y: 10, z: 1}
+  m_LocalScale: {x: 500, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -1225,7 +1225,19 @@ Prefab:
       propertyPath: gaujeController
       value: 
       objectReference: {fileID: 337922259}
-    m_RemovedComponents: []
+    - target: {fileID: 114876707105906488, guid: 21c32a0b8f655de40b782772348108f3,
+        type: 2}
+      propertyPath: magnetRay
+      value: 
+      objectReference: {fileID: 114386577128931716, guid: fa639363ba208324aaf6dbc45506b600,
+        type: 2}
+    - target: {fileID: 114876707105906488, guid: 21c32a0b8f655de40b782772348108f3,
+        type: 2}
+      propertyPath: soundDistance
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114100333140279388, guid: 21c32a0b8f655de40b782772348108f3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 21c32a0b8f655de40b782772348108f3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1467017048
