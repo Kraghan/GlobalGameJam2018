@@ -17,6 +17,10 @@ public class SkillSound : MonoBehaviour
     public float        magnitude;
     private Rigidbody2D body;
     private Vector2     velocity;
+    private float amplitudeY = 1f;
+    private float frequence = 100;
+    private float angle = 0;
+    private float xPos;
 
     /**
      * Called at start
@@ -26,6 +30,7 @@ public class SkillSound : MonoBehaviour
         magnitude        = 1.0f;
         body             = GetComponent<Rigidbody2D>();
         playerController = GetComponent<PlayerController>();
+        xPos = 0;
     }
 
     /**
@@ -33,7 +38,15 @@ public class SkillSound : MonoBehaviour
      */
     void Update()
     {
-        // None
+        /*xPos = Mathf.PingPong(Time.time,2) - 1;
+        float cos = Mathf.Cos(angle);
+        float sin = Mathf.Sin(angle);
+
+        float y = sin * (xPos) + cos * Mathf.Sin(xPos * frequence) * amplitudeY;
+        float x = cos * (xPos) - sin * Mathf.Sin(xPos * frequence) * amplitudeY;
+
+        body.velocity += new Vector2(x, y);*/
+
     }
 
     /**
@@ -72,6 +85,7 @@ public class SkillSound : MonoBehaviour
             }
 
             body.velocity = velocity;
+            AkSoundEngine.PostEvent("Sound_Bounce", gameObject);
         }
     }
 

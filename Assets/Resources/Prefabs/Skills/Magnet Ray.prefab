@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114386577128931716}
   - component: {fileID: 58964917808505424}
   - component: {fileID: 50941877383321622}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Magnet Ray
   m_TagString: MagnetRay
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411a141e4fbe50c41b86327e1925e2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 1
+  m_speed: 0.1
 --- !u!212 &212043844124644526
 SpriteRenderer:
   m_ObjectHideFlags: 1

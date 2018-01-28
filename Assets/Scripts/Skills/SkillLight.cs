@@ -60,6 +60,7 @@ public class SkillLight : MonoBehaviour
 
             velocity      = reflection * initialSpeed;
             body.velocity = velocity;
+            AkSoundEngine.PostEvent("Light_Bounce", gameObject);
         }
         else
         {
