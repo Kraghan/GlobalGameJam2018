@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveObject : Action {
+public class MoveObject : TriggerAction {
     
     [SerializeField]
     protected Vector2 m_destination;

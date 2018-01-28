@@ -7,7 +7,7 @@ public class Switch : MonoBehaviour {
 
     #region Attributes
     [SerializeField]
-    private Action m_action;
+    private TriggerAction m_action;
     [SerializeField]
     private Sprite m_spriteActivated;
 
