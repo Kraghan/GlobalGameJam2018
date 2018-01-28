@@ -30,10 +30,16 @@ public class SkillTimeFreeze : MonoBehaviour
         {
             TimeManager.TimeScale = timeScale;
             gaujeController.EmptyGauje();
+
+            // RTPC
+            Debug.Log("RTPC event : " + Time.timeScale);
+            AkSoundEngine.SetRTPCValue("Bullet_Time", Time.timeScale);
+
         }
         else
         {
             TimeManager.TimeScale = 1.0f;
+            AkSoundEngine.SetRTPCValue("Bullet_Time", Time.timeScale);
         }
 
         isFreezing = false;
