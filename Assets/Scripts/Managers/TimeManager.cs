@@ -8,6 +8,19 @@ using System.Collections.Generic;
  */
 public class TimeManager : MonoBehaviour
 {
+    private static TimeManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        AkSoundEngine.SetRTPCValue("Bullet_Time", 1.0f, TimeManager.instance.gameObject);
+        instance = null;
+    }
+
     public static float DeltaTime
     {
         get
@@ -35,6 +48,9 @@ public class TimeManager : MonoBehaviour
         {
             Time.timeScale      = value;
             Time.fixedDeltaTime = 0.02F * Time.timeScale;
+
+            // RTPC
+            AkSoundEngine.SetRTPCValue("Bullet_Time", Time.timeScale, TimeManager.instance.gameObject);
         }
     }
 }
