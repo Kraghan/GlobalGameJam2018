@@ -83,9 +83,17 @@ public class PlayerSkillsController : MonoBehaviour
             }
             else if(wasHoldingLight)
             {
+                if (soundSKill != null)
+                    soundSKill.DisableSkill();
+
                 lightSkill = GetComponent<SkillLight>();
-                if (GetComponent<SkillLight>() == null)
+                if (lightSkill == null)
                 {
+                    lightSkill = this.gameObject.AddComponent<SkillLight>();
+                }
+                else
+                {
+                    lightSkill.DisableSkill();
                     lightSkill = this.gameObject.AddComponent<SkillLight>();
                 }
                 loadController.RemoveLoad();
@@ -107,10 +115,17 @@ public class PlayerSkillsController : MonoBehaviour
             }
             else if (wasHoldingSound)
             {
-                Debug.Log("Casting sound wave");
                 soundSKill = GetComponent<SkillSound>();
+                if (lightSkill != null)
+                    lightSkill.DisableSkill();
+
                 if (soundSKill == null)
                 {
+                    soundSKill = this.gameObject.AddComponent<SkillSound>();
+                }
+                else
+                {
+                    soundSKill.DisableSkill();
                     soundSKill = this.gameObject.AddComponent<SkillSound>();
                 }
                 loadController.RemoveLoad();
@@ -157,7 +172,7 @@ public class PlayerSkillsController : MonoBehaviour
 
         // The player touched the ground
         // So we can reload the wave loads
-        if(playerController.IsGrounded())
+        if(playerController.IsGrounded() && magnetSKill == null && lightSkill == null && soundSKill == null)
         {
             loadController.Reload();
         }

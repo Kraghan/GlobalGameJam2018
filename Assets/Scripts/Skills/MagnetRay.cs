@@ -26,7 +26,10 @@ public class MagnetRay : MonoBehaviour
 
         if (once)
         {
-            transform.Rotate(new Vector3(0, 0, Vector2.Angle(m_direction, Vector2.right) + 90));
+            float a = Vector2.Angle(m_direction, Vector2.right) + 90;
+            if (m_direction.y < 0)
+                a -= 90;
+            transform.Rotate(new Vector3(0, 0, a));
             once = false;
         }
 
