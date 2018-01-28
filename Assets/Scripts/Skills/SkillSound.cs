@@ -40,7 +40,8 @@ public class SkillSound : MonoBehaviour
      */
     void Update()
     {
-        if(Vector2.Distance(initialPoint,transform.position) + distanceReachedBeforeBounce >= distanceToDisable)
+        if(Vector2.Distance(initialPoint,transform.position) + distanceReachedBeforeBounce >= distanceToDisable
+            || Input.GetButton("CancelPower"))
         {
             DisableSkill();
         }
