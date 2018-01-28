@@ -16,45 +16,181 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{703930B1-C9ED-4023-83F8-2FE5FCEC5017}'
-    m_lastTimePsrt1: -146596695
-    m_lastTimePart2: -1999280777
+    m_lastTimePsrt1: 763972161
+    m_lastTimePart2: -1999280657
     List:
-    - Name: Music_Play
-      Path: Default Work Unit\Music_Play
+    - Name: Droplets
+      Path: Default Work Unit\World\Droplets
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: World
+        ObjectType: 4
+      - ElementName: Droplets
+        ObjectType: 3
+      ID: 1584379932
+      Guid: a19f87a3288eaf43bb6b3c7767495fbb
+      maxAttenuation: 0
+    - Name: Footsteps
+      Path: Default Work Unit\Kodama (Main Character\Footsteps
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Kodama (Main Character
+        ObjectType: 4
+      - ElementName: Footsteps
+        ObjectType: 3
+      ID: -1909339098
+      Guid: 1f81f0250a43524aafb660ebd41f69c5
+      maxAttenuation: 0
+    - Name: Jump
+      Path: Default Work Unit\Kodama (Main Character\Jump
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Kodama (Main Character
+        ObjectType: 4
+      - ElementName: Jump
+        ObjectType: 3
+      ID: -461315959
+      Guid: 8c8a0d92e713f946983620e68aadbd74
+      maxAttenuation: 0
+    - Name: Land
+      Path: Default Work Unit\Kodama (Main Character\Land
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Kodama (Main Character
+        ObjectType: 4
+      - ElementName: Land
+        ObjectType: 3
+      ID: 674522502
+      Guid: d422dc7be2765b46a26eb271dd4c1402
+      maxAttenuation: 0
+    - Name: Lever_Activate
+      Path: Default Work Unit\World\Lever_Activate
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: World
+        ObjectType: 4
+      - ElementName: Lever_Activate
+        ObjectType: 3
+      ID: -614376775
+      Guid: 5d4a0ca430692146b2e329f47d2599e4
+      maxAttenuation: 0
+    - Name: Light_Bounce
+      Path: Default Work Unit\Kodama (Main Character\Competences\Light_Bounce
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Kodama (Main Character
+        ObjectType: 4
+      - ElementName: Competences
+        ObjectType: 4
+      - ElementName: Light_Bounce
+        ObjectType: 3
+      ID: 153085414
+      Guid: 5b8ecabccd9dea42958d40c2eec01ae5
+      maxAttenuation: 0
+    - Name: LightDash
+      Path: Default Work Unit\Kodama (Main Character\Competences\LightDash
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Kodama (Main Character
+        ObjectType: 4
+      - ElementName: Competences
+        ObjectType: 4
+      - ElementName: LightDash
+        ObjectType: 3
+      ID: 957645723
+      Guid: 47f33bf903bc004895c380019f711095
+      maxAttenuation: 0
+    - Name: Magnet_Sound
+      Path: Default Work Unit\Kodama (Main Character\Competences\Magnet_Sound
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Kodama (Main Character
+        ObjectType: 4
+      - ElementName: Competences
+        ObjectType: 4
+      - ElementName: Magnet_Sound
+        ObjectType: 3
+      ID: -1175075645
+      Guid: 9206dfd7dd2740409912c555acfd225f
+      maxAttenuation: 0
+    - Name: Music_Play
+      Path: Default Work Unit\World\Music_Play
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: World
+        ObjectType: 4
       - ElementName: Music_Play
         ObjectType: 3
       ID: 202194903
       Guid: b456f8309849584788bff26d0ae01a1f
       maxAttenuation: 0
     - Name: Music_Stop
-      Path: Default Work Unit\Music_Stop
+      Path: Default Work Unit\World\Music_Stop
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: World
+        ObjectType: 4
       - ElementName: Music_Stop
         ObjectType: 3
       ID: -1067786235
       Guid: 4d988fb8e8dbd8418cd9fcbe12635522
       maxAttenuation: 0
-    - Name: TestWwise
-      Path: Default Work Unit\TestWwise
+    - Name: Sound_Bounce
+      Path: Default Work Unit\Kodama (Main Character\Competences\Sound_Bounce
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: TestWwise
+      - ElementName: Kodama (Main Character
+        ObjectType: 4
+      - ElementName: Competences
+        ObjectType: 4
+      - ElementName: Sound_Bounce
         ObjectType: 3
-      ID: -1901777060
-      Guid: 060faa028fa278479f585e8782bbcd31
+      ID: 897878801
+      Guid: ff2260d7e7bd2245aafc3cf2e08c5813
+      maxAttenuation: 0
+    - Name: SoundDash
+      Path: Default Work Unit\Kodama (Main Character\Competences\SoundDash
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Kodama (Main Character
+        ObjectType: 4
+      - ElementName: Competences
+        ObjectType: 4
+      - ElementName: SoundDash
+        ObjectType: 3
+      ID: 1960922890
+      Guid: 655194b518e4874c91dab2e1658d5bdd
+      maxAttenuation: 0
+    - Name: Wind
+      Path: Default Work Unit\World\Wind
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: World
+        ObjectType: 4
+      - ElementName: Wind
+        ObjectType: 3
+      ID: 1537061107
+      Guid: 5c0081bbea35774ea1ccee7745bffaee
       maxAttenuation: 0
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B95DF31A-7DE6-481B-8FD6-7C084C5DF8DD}'
-    m_lastTimePsrt1: -141680869
-    m_lastTimePart2: -1999280777
+    m_lastTimePsrt1: 1560097929
+    m_lastTimePart2: -1999280766
     List:
     - Name: Rev
       Path: Default Work Unit\Master Audio Bus\Rev
@@ -71,22 +207,22 @@ MonoBehaviour:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{A1567669-40C1-4688-93FA-EF611A04BC5A}'
-    m_lastTimePsrt1: -502337764
-    m_lastTimePart2: -1999280888
+    m_lastTimePsrt1: 4554568
+    m_lastTimePart2: -1999280887
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{879AACD1-E9B1-48D2-8A0B-57FDE230D91F}'
-    m_lastTimePsrt1: -502327729
-    m_lastTimePart2: -1999280888
+    m_lastTimePsrt1: 4564583
+    m_lastTimePart2: -1999280887
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{370C6306-7D57-4F2E-BF53-4670A3B9F39B}'
-    m_lastTimePsrt1: -182552102
-    m_lastTimePart2: -1999280879
+    m_lastTimePsrt1: -687326453
+    m_lastTimePart2: -1999280861
     List:
     - Name: SoundBank
       Path: Default Work Unit\SoundBank
@@ -101,15 +237,24 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{3233103F-C51F-4BE8-8178-AABFCB15B6F7}'
-    m_lastTimePsrt1: -507496883
-    m_lastTimePart2: -1999280888
-    List: []
+    m_lastTimePsrt1: 1374218558
+    m_lastTimePart2: -1999280696
+    List:
+    - Name: Bullet_Time
+      Path: Default Work Unit\Bullet_Time
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Bullet_Time
+        ObjectType: 13
+      ID: 252131915
+      Guid: 31a8b500ae444044b9adb3e7cae4698a
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{C04AD7FD-D508-408A-A75D-A264EAB881C1}'
-    m_lastTimePsrt1: -502322724
-    m_lastTimePart2: -1999280888
+    m_lastTimePsrt1: 4564583
+    m_lastTimePart2: -1999280887
     List: []
   ExpandedItems:
   - /GGJWwise
