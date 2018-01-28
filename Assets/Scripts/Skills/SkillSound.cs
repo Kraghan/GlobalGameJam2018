@@ -103,7 +103,7 @@ public class SkillSound : MonoBehaviour
         playerController.enabled = false;
     }
 
-    private void DisableSkill()
+    public void DisableSkill()
     {
         playerController.enabled = true;
         body.gravityScale = storedGravity;

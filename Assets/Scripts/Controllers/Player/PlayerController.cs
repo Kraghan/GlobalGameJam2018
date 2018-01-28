@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour {
             transform.position = m_lastCheckPoint;
             Camera.main.transform.position = new Vector3(transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
         }
+
         // Movement 
         float xToAdd = Input.GetAxis("Horizontal") * m_acceleration * TimeManager.DeltaTime;
         if (Mathf.Abs(m_rigidbody.velocity.x) < m_speed)
@@ -60,7 +61,6 @@ public class PlayerController : MonoBehaviour {
             m_rigidbody.velocity = new Vector2(0,m_rigidbody.velocity.y);
 
         // Jump
-
         if (Input.GetButton("Jump"))
         {
             m_timeElapsedJump += TimeManager.DeltaTime;
