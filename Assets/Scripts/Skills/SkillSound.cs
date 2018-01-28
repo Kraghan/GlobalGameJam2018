@@ -20,6 +20,7 @@ public class SkillSound : MonoBehaviour
     public float        magnitude;
     private Rigidbody2D body;
     private Vector2     velocity;
+    private float storedGravity;
 
     private float distanceReachedBeforeBounce;
 
@@ -88,8 +89,9 @@ public class SkillSound : MonoBehaviour
     {
         // Computing new velocity
         velocity = initialDirection * initialSpeed;
-        
+
         // Body settings
+        storedGravity = body.gravityScale;
         body.gravityScale = 0;
         body.velocity = velocity;
         
@@ -102,7 +104,7 @@ public class SkillSound : MonoBehaviour
     private void DisableSkill()
     {
         playerController.enabled = true;
-        body.gravityScale = 1;
+        body.gravityScale = storedGravity;
         body.velocity = new Vector2(0.0f, 0.0f);
 
         // Settings back the layer
