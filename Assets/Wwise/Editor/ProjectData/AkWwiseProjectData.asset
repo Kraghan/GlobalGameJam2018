@@ -260,6 +260,7 @@ MonoBehaviour:
   - /GGJWwise
   - /GGJWwise/Events
   - /GGJWwise/Events/Default Work Unit
+  - /GGJWwise/Events/Default Work Unit/UI
   - /GGJWwise/SoundBanks
   - /GGJWwise/SoundBanks/Default Work Unit
   m_lastPopulateTimePsrt1: 0
