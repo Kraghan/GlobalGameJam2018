@@ -6,27 +6,74 @@ using System.Collections.Generic;
 
 public class MainMenuController : MonoBehaviour
 {
+    public void Start()
+    {
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Music_Play");
+            MusicManager.PostEvent("Wind");
+        }
+    }
+
     public void OnPlay()
     {
-        AkSoundEngine.PostEvent("UI_Chose", this.gameObject);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("UI_Chose");
+        }
+        else
+        {
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("UI_Chose", this.gameObject);
+            #endif
+        }
+
         SceneManager.LoadSceneAsync("Main");
     }
 
     public void OnCreditOpen()
     {
-        AkSoundEngine.PostEvent("UI_Chose", this.gameObject);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("UI_Chose");
+        }
+        else
+        {
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("UI_Chose", this.gameObject);
+            #endif
+        }
+
         SceneManager.LoadSceneAsync("CreditScreen");
     }
 
     public void OnGameExit()
     {
-        AkSoundEngine.PostEvent("UI_Chose", this.gameObject);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("UI_Chose");
+        }
+        else
+        {
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("UI_Chose", this.gameObject);
+            #endif
+        }
         Application.Quit();
     }
 
     public void OnMainMenuBack()
     {
-        AkSoundEngine.PostEvent("UI_Chose", this.gameObject);
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("UI_Chose");
+        }
+        else
+        {
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent("UI_Chose", this.gameObject);
+            #endif
+        }
         SceneManager.LoadSceneAsync("TitleScreen");
     }
 }

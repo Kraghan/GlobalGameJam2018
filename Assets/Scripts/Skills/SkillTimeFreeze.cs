@@ -32,13 +32,32 @@ public class SkillTimeFreeze : MonoBehaviour
             gaujeController.EmptyGauje();
 
             // RTPC
-            AkSoundEngine.SetRTPCValue("Bullet_Time", Time.timeScale);
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.SetMainVolume(Time.timeScale);
+            }
+            else
+            {
+                #if !UNITY_WEBGL
+                    AkSoundEngine.SetRTPCValue("Bullet_Time", Time.timeScale);
+                #endif
+            }
 
         }
         else
         {
             TimeManager.TimeScale = 1.0f;
-            AkSoundEngine.SetRTPCValue("Bullet_Time", Time.timeScale);
+
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.SetMainVolume(Time.timeScale);
+            }
+            else
+            {
+                #if !UNITY_WEBGL
+                    AkSoundEngine.SetRTPCValue("Bullet_Time", Time.timeScale);
+                #endif
+            }
         }
 
         isFreezing = false;

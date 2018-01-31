@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -35438,7 +35439,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4155286765045440, guid: cc4d25e3cdb708742b02a5a38e50953f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.37
+      value: 4.4
       objectReference: {fileID: 0}
     - target: {fileID: 4155286765045440, guid: cc4d25e3cdb708742b02a5a38e50953f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -35477,6 +35478,16 @@ Prefab:
         type: 2}
       propertyPath: m_Offset.y
       value: 8.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 114256543645178770, guid: cc4d25e3cdb708742b02a5a38e50953f,
+        type: 2}
+      propertyPath: m_destination.x
+      value: 311.7962
+      objectReference: {fileID: 0}
+    - target: {fileID: 114256543645178770, guid: cc4d25e3cdb708742b02a5a38e50953f,
+        type: 2}
+      propertyPath: m_destination.y
+      value: 7.74
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc4d25e3cdb708742b02a5a38e50953f, type: 2}
@@ -36472,6 +36483,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10

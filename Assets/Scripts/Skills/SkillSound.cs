@@ -79,7 +79,17 @@ public class SkillSound : MonoBehaviour
             }
 
             body.velocity = velocity;
-            AkSoundEngine.PostEvent("Sound_Bounce", gameObject);
+
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Sound_Bounce");
+            }
+            else
+            {
+                #if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Sound_Bounce", gameObject);
+                #endif
+            }
         }
     }
 

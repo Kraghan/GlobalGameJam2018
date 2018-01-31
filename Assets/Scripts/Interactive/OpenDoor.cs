@@ -12,10 +12,20 @@ public class OpenDoor : MoveObject
         base.Update();
         if (once && m_timeElapsed >= m_timeToComplete)
         {
-            AkSoundEngine.PostEvent("Door_Move_Stop", gameObject);
-            AkSoundEngine.PostEvent("Door_Stop", gameObject);
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Door_Move_Stop");
+                MusicManager.PostEvent("Door_Stop");
+            }
+            else
+            {
+                #if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Door_Move_Stop", gameObject);
+                    AkSoundEngine.PostEvent("Door_Stop", gameObject);
+                #endif
+            }
+
             once = false;
-            Debug.Log("Toto");
         }
     }
 
@@ -24,6 +34,16 @@ public class OpenDoor : MoveObject
         base.Trigger();
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         renderer.sprite = m_openSprite;
-        AkSoundEngine.PostEvent("Door_Move_Play", gameObject);
+
+        if (MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent("Door_Move_Play");
+        }
+        else
+        {
+            #if !UNITY_WEBGL
+                 AkSoundEngine.PostEvent("Door_Move_Play", gameObject);
+            #endif
+        }
     }
 }

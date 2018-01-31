@@ -101,7 +101,16 @@ public class PlayerController : MonoBehaviour {
 
     public void PlaySound(string soundName)
     {
-        AkSoundEngine.PostEvent(soundName, gameObject);
+        if(MusicManager.WebGLBuildSupport)
+        {
+            MusicManager.PostEvent(soundName);
+        }
+        else
+        {
+            #if !UNITY_WEBGL
+                AkSoundEngine.PostEvent(soundName, gameObject);
+            #endif
+        }
     }
 
     public void SetLastCheckPoint()

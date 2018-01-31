@@ -198,7 +198,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: YVelocity
-    m_EventTreshold: -0.1
+    m_EventTreshold: -1
   - m_ConditionMode: 6
     m_ConditionEvent: Form
     m_EventTreshold: 0

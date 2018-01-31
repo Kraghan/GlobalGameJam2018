@@ -273,8 +273,8 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{3233103F-C51F-4BE8-8178-AABFCB15B6F7}'
-    m_lastTimePsrt1: -1977989277
-    m_lastTimePart2: -1999280559
+    m_lastTimePsrt1: -822738995
+    m_lastTimePart2: -1999280551
     List:
     - Name: Bullet_Time
       Path: Default Work Unit\Bullet_Time

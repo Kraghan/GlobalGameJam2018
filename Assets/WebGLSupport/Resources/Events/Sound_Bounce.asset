@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18b29bb7fa7a944eb14ad8ca0a96468, type: 3}
+  m_Name: Sound_Bounce
+  m_EditorClassIdentifier: 
+  Play: 1
+  Stop: 0
+  Reverb: 1
+  SoundEventName: Sound_Bounce
+  SoundEventTarget:
+  - {fileID: 8300000, guid: 2d0583730c7d0a5419e945104d982f73, type: 3}
+  - {fileID: 8300000, guid: f49f10cbd83d1cf429883907e2788fd8, type: 3}
+  - {fileID: 8300000, guid: c04d3ff84313e0049b88bdd6a505d4a7, type: 3}
+  SoundEventType: 0
+  SoundEventLoop: 0
+  SoundEventMaxInstance: 3
+  SoundEventVolume: 0.3
+  SoundEventPitch: 1
+  SoundEventReverb: 1
+  RandomizeVolume: 0
+  RandomizePitch: 0
+  PitchRandomRange: {x: 0, y: 0}
+  VolumeRandomRange: {x: 0, y: 0}
+  SoundEventReverbPreset: 14

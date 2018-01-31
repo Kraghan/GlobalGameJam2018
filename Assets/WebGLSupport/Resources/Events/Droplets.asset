@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18b29bb7fa7a944eb14ad8ca0a96468, type: 3}
+  m_Name: Droplets
+  m_EditorClassIdentifier: 
+  Play: 1
+  Stop: 0
+  Reverb: 1
+  SoundEventName: Droplets
+  SoundEventTarget:
+  - {fileID: 8300000, guid: 460492380b55fee4f92ed8e024878805, type: 3}
+  - {fileID: 8300000, guid: cad7f5303f28b214c8dc85ec67aa4063, type: 3}
+  - {fileID: 8300000, guid: 08041a1fcbfb7194a82e45fc15daa139, type: 3}
+  - {fileID: 8300000, guid: 0120137d43900a94ab1a0d270d2499f1, type: 3}
+  SoundEventType: 0
+  SoundEventLoop: 0
+  SoundEventMaxInstance: 10
+  SoundEventVolume: 0.2
+  SoundEventPitch: 1
+  SoundEventReverb: 1
+  RandomizeVolume: 0
+  RandomizePitch: 1
+  PitchRandomRange: {x: -0.1, y: 0.1}
+  VolumeRandomRange: {x: 0, y: 0}
+  SoundEventReverbPreset: 3

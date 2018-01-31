@@ -103,7 +103,18 @@ public class PlayerSkillsController : MonoBehaviour
                 lightSkill.initialSpeed     = lightSpeed;
                 lightSkill.initialDirection = new Vector2(axis.x, axis.y);
                 lightSkill.CastLightWave();
-                AkSoundEngine.PostEvent("LightDash", gameObject);
+
+                if (MusicManager.WebGLBuildSupport)
+                {
+                    MusicManager.PostEvent("LightDash");
+                }
+                else
+                {
+                    #if !UNITY_WEBGL
+                        AkSoundEngine.PostEvent("LightDash", gameObject);
+                    #endif
+                }
+
                 m_animator.SetInteger("Form", 1);
             }
 
@@ -138,7 +149,18 @@ public class PlayerSkillsController : MonoBehaviour
                 soundSKill.initialPoint = transform.position;
                 soundSKill.distanceToDisable = soundDistance;
                 soundSKill.CastSoundWave();
-                AkSoundEngine.PostEvent("SoundDash", gameObject);
+
+                if (MusicManager.WebGLBuildSupport)
+                {
+                    MusicManager.PostEvent("SoundDash");
+                }
+                else
+                {
+                    #if !UNITY_WEBGL
+                        AkSoundEngine.PostEvent("SoundDash", gameObject);
+                    #endif
+                }
+
                 m_animator.SetInteger("Form", 2);
             }
 
@@ -163,7 +185,18 @@ public class PlayerSkillsController : MonoBehaviour
                 magnetSKill.m_magnetRay = magnetRay;
                 magnetSKill.m_magnetRay.SetDistanceMax(rayDistance);
                 magnetSKill.CastMagnetWave(initialDirection);
-                AkSoundEngine.PostEvent("Magnet_Sound", gameObject);
+
+                if (MusicManager.WebGLBuildSupport)
+                {
+                    MusicManager.PostEvent("Magnet_Sound");
+                }
+                else
+                {
+                    #if !UNITY_WEBGL
+                        AkSoundEngine.PostEvent("Magnet_Sound", gameObject);
+                    #endif
+                }
+
             }
 
 

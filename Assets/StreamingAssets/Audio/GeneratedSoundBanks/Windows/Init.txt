@@ -1,0 +1,10 @@
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	805203703	Master Secondary Bus			\Default Work Unit\Master Secondary Bus	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	980603520	Rev			\Default Work Unit\Master Audio Bus\Rev	
+
+Effect plug-ins	ID	Name	Type				Notes
+	3442768367	Hall_Large_Dark	Wwise RoomVerb			
+

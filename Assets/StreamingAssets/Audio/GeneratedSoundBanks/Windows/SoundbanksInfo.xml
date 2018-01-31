@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="125">
+	<RootPaths>
+		<ProjectRoot>D:\GGJWwise\GGJWwise\</ProjectRoot>
+		<SourceFilesRoot>D:\GGJWwise\GGJWwise\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\GGJWwise\GGJWwise\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\GGJWwise\GGJWwise\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1661994096" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\SoundBank</ObjectPath>
+			<ShortName>SoundBank</ShortName>
+			<Path>SoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="779278001" Name="Death" ObjectPath="\Events\Default Work Unit\Kodama (Main Character\Death"/>
+				<Event Id="1584379932" Name="Droplets" ObjectPath="\Events\Default Work Unit\World\Droplets"/>
+				<Event Id="2385628198" Name="Footsteps" ObjectPath="\Events\Default Work Unit\Kodama (Main Character\Footsteps"/>
+				<Event Id="3833651337" Name="Jump" ObjectPath="\Events\Default Work Unit\Kodama (Main Character\Jump"/>
+				<Event Id="674522502" Name="Land" ObjectPath="\Events\Default Work Unit\Kodama (Main Character\Land"/>
+				<Event Id="3680590521" Name="Lever_Activate" ObjectPath="\Events\Default Work Unit\World\Lever_Activate"/>
+				<Event Id="153085414" Name="Light_Bounce" ObjectPath="\Events\Default Work Unit\Kodama (Main Character\Competences\Light_Bounce"/>
+				<Event Id="957645723" Name="LightDash" ObjectPath="\Events\Default Work Unit\Kodama (Main Character\Competences\LightDash"/>
+				<Event Id="3119891651" Name="Magnet_Sound" ObjectPath="\Events\Default Work Unit\Kodama (Main Character\Competences\Magnet_Sound"/>
+				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\World\Music_Play"/>
+				<Event Id="3227181061" Name="Music_Stop" ObjectPath="\Events\Default Work Unit\World\Music_Stop" MaxAttenuation="0.000000"/>
+				<Event Id="897878801" Name="Sound_Bounce" ObjectPath="\Events\Default Work Unit\Kodama (Main Character\Competences\Sound_Bounce"/>
+				<Event Id="1960922890" Name="SoundDash" ObjectPath="\Events\Default Work Unit\Kodama (Main Character\Competences\SoundDash"/>
+				<Event Id="1078618618" Name="UI_Chose" ObjectPath="\Events\Default Work Unit\UI\UI_Chose"/>
+				<Event Id="873092944" Name="UI_Validate" ObjectPath="\Events\Default Work Unit\UI\UI_Validate"/>
+				<Event Id="1537061107" Name="Wind" ObjectPath="\Events\Default Work Unit\World\Wind"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="7900533" Language="SFX">
+					<ShortName>Vent.wav</ShortName>
+					<Path>SFX\Vent_F17FB28C.wem</Path>
+				</File>
+				<File Id="13347709" Language="SFX">
+					<ShortName>FTSTP  (5).wav</ShortName>
+					<Path>SFX\FTSTP  (5)_BBF1425D.wem</Path>
+				</File>
+				<File Id="14766695" Language="SFX">
+					<ShortName>Bounce_Sound3.wav</ShortName>
+					<Path>SFX\Bounce_Sound3_B72B9312.wem</Path>
+				</File>
+				<File Id="51343728" Language="SFX">
+					<ShortName>FTSTP  (6).wav</ShortName>
+					<Path>SFX\FTSTP  (6)_13078F1C.wem</Path>
+				</File>
+				<File Id="63359783" Language="SFX">
+					<ShortName>LAND (1).wav</ShortName>
+					<Path>SFX\LAND (1)_1C9C67B2.wem</Path>
+				</File>
+				<File Id="118640053" Language="SFX">
+					<ShortName>FTSTP  (9).wav</ShortName>
+					<Path>SFX\FTSTP  (9)_066C25D9.wem</Path>
+				</File>
+				<File Id="144800129" Language="SFX">
+					<ShortName>Goutte-11.L.wav</ShortName>
+					<Path>SFX\Goutte-11.L_1C9C67B2.wem</Path>
+				</File>
+				<File Id="162810563" Language="SFX">
+					<ShortName>Bounce_Sound1.wav</ShortName>
+					<Path>SFX\Bounce_Sound1_423BDD94.wem</Path>
+				</File>
+				<File Id="221709418" Language="SFX">
+					<ShortName>Ui_2.wav</ShortName>
+					<Path>SFX\Ui_2_5E5A11BF.wem</Path>
+				</File>
+				<File Id="241263403" Language="SFX">
+					<ShortName>BLANK.wav</ShortName>
+					<Path>SFX\BLANK_4C0A73FE.wem</Path>
+				</File>
+				<File Id="274665557" Language="SFX">
+					<ShortName>Ui_1.wav</ShortName>
+					<Path>SFX\Ui_1_1C9C67B2.wem</Path>
+				</File>
+				<File Id="279165022" Language="SFX">
+					<ShortName>Death.wav</ShortName>
+					<Path>SFX\Death_1C9C67B2.wem</Path>
+				</File>
+				<File Id="300389398" Language="SFX">
+					<ShortName>GGJMusic2Loop.wav</ShortName>
+					<Path>SFX\GGJMusic2Loop_F17FB28C.wem</Path>
+				</File>
+				<File Id="323482280" Language="SFX">
+					<ShortName>FTSTP  (3).wav</ShortName>
+					<Path>SFX\FTSTP  (3)_295CF8F2.wem</Path>
+				</File>
+				<File Id="350212611" Language="SFX">
+					<ShortName>GGJMusic2First.wav</ShortName>
+					<Path>SFX\GGJMusic2First_F17FB28C.wem</Path>
+				</File>
+				<File Id="374707318" Language="SFX">
+					<ShortName>JUMP (1).wav</ShortName>
+					<Path>SFX\JUMP (1)_1C9C67B2.wem</Path>
+				</File>
+				<File Id="390875912" Language="SFX">
+					<ShortName>Magnet_Sound_2.wav</ShortName>
+					<Path>SFX\Magnet_Sound_2_27A67744.wem</Path>
+				</File>
+				<File Id="424866676" Language="SFX">
+					<ShortName>FTSTP  (4).wav</ShortName>
+					<Path>SFX\FTSTP  (4)_CDB8DE64.wem</Path>
+				</File>
+				<File Id="435500323" Language="SFX">
+					<ShortName>Bounce_Light2.wav</ShortName>
+					<Path>SFX\Bounce_Light2_FE3B80B4.wem</Path>
+				</File>
+				<File Id="470040378" Language="SFX">
+					<ShortName>Goutte-EQ37B_01-07.L.wav</ShortName>
+					<Path>SFX\Goutte-EQ37B_01-07.L_1C9C67B2.wem</Path>
+				</File>
+				<File Id="494915853" Language="SFX">
+					<ShortName>Magnet_Sound_3.wav</ShortName>
+					<Path>SFX\Magnet_Sound_3_2CA8CD42.wem</Path>
+				</File>
+				<File Id="531514587" Language="SFX">
+					<ShortName>Bounce_Light1.wav</ShortName>
+					<Path>SFX\Bounce_Light1_05754E1E.wem</Path>
+				</File>
+				<File Id="546536470" Language="SFX">
+					<ShortName>FTSTP  (10).wav</ShortName>
+					<Path>SFX\FTSTP  (10)_6B4809AC.wem</Path>
+				</File>
+				<File Id="620043665" Language="SFX">
+					<ShortName>Magnet_Sound_1.wav</ShortName>
+					<Path>SFX\Magnet_Sound_1_599253E8.wem</Path>
+				</File>
+				<File Id="636394340" Language="SFX">
+					<ShortName>Sound_Power3.wav</ShortName>
+					<Path>SFX\Sound_Power3_2506059A.wem</Path>
+				</File>
+				<File Id="641549876" Language="SFX">
+					<ShortName>Sound_Power.wav</ShortName>
+					<Path>SFX\Sound_Power_F573F292.wem</Path>
+				</File>
+				<File Id="673687820" Language="SFX">
+					<ShortName>LightTeleport3.wav</ShortName>
+					<Path>SFX\LightTeleport3_1C9C67B2.wem</Path>
+				</File>
+				<File Id="685721748" Language="SFX">
+					<ShortName>FTSTP  (1).wav</ShortName>
+					<Path>SFX\FTSTP  (1)_1C9C67B2.wem</Path>
+				</File>
+				<File Id="690794055" Language="SFX">
+					<ShortName>Goutte-09.L.wav</ShortName>
+					<Path>SFX\Goutte-09.L_1C9C67B2.wem</Path>
+				</File>
+				<File Id="712327761" Language="SFX">
+					<ShortName>LightTeleport1.wav</ShortName>
+					<Path>SFX\LightTeleport1_1C9C67B2.wem</Path>
+				</File>
+				<File Id="740370175" Language="SFX">
+					<ShortName>FTSTP  (8).wav</ShortName>
+					<Path>SFX\FTSTP  (8)_BF83764E.wem</Path>
+				</File>
+				<File Id="774910877" Language="SFX">
+					<ShortName>JUMP (2).wav</ShortName>
+					<Path>SFX\JUMP (2)_1C9C67B2.wem</Path>
+				</File>
+				<File Id="859768990" Language="SFX">
+					<ShortName>LightTeleport2.wav</ShortName>
+					<Path>SFX\LightTeleport2_1C9C67B2.wem</Path>
+				</File>
+				<File Id="957207754" Language="SFX">
+					<ShortName>Lever_Activate.wav</ShortName>
+					<Path>SFX\Lever_Activate_1C9C67B2.wem</Path>
+				</File>
+				<File Id="976850678" Language="SFX">
+					<ShortName>FTSTP  (2).wav</ShortName>
+					<Path>SFX\FTSTP  (2)_692E5E6D.wem</Path>
+				</File>
+				<File Id="1006054932" Language="SFX">
+					<ShortName>Bounce_Sound2.wav</ShortName>
+					<Path>SFX\Bounce_Sound2_C71A7210.wem</Path>
+				</File>
+				<File Id="1013477832" Language="SFX">
+					<ShortName>LAND (2).wav</ShortName>
+					<Path>SFX\LAND (2)_1C9C67B2.wem</Path>
+				</File>
+				<File Id="1026649110" Language="SFX">
+					<ShortName>FTSTP  (7).wav</ShortName>
+					<Path>SFX\FTSTP  (7)_1BD47B6A.wem</Path>
+				</File>
+				<File Id="1033204811" Language="SFX">
+					<ShortName>Sound_Power2.wav</ShortName>
+					<Path>SFX\Sound_Power2_CD575573.wem</Path>
+				</File>
+				<File Id="1065227647" Language="SFX">
+					<ShortName>Bounce_Light3.wav</ShortName>
+					<Path>SFX\Bounce_Light3_B8138AFD.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

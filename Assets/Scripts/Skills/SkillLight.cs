@@ -67,7 +67,17 @@ public class SkillLight : MonoBehaviour
 
             velocity      = reflection * initialSpeed;
             body.velocity = velocity;
-            AkSoundEngine.PostEvent("Light_Bounce", gameObject);
+
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Light_Bounce");
+            }
+            else
+            {
+                #if !UNITY_WEBGL
+                    AkSoundEngine.PostEvent("Light_Bounce", gameObject);
+                #endif
+            }
         }
         else
         {

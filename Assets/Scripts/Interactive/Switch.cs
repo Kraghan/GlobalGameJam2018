@@ -26,7 +26,17 @@ public class Switch : MonoBehaviour {
 
             m_action.Trigger();
             m_activated = true;
-            AkSoundEngine.PostEvent("Lever_Activate", gameObject);
+
+            if (MusicManager.WebGLBuildSupport)
+            {
+                MusicManager.PostEvent("Lever_Activate");
+            }
+            else
+            {
+                #if !UNITY_WEBGL
+                     AkSoundEngine.PostEvent("Lever_Activate", gameObject);
+                #endif
+            }
         }
     }
     #endregion

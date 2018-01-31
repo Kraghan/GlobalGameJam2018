@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18b29bb7fa7a944eb14ad8ca0a96468, type: 3}
+  m_Name: Footsteps
+  m_EditorClassIdentifier: 
+  Play: 1
+  Stop: 0
+  Reverb: 1
+  SoundEventName: Footsteps
+  SoundEventTarget:
+  - {fileID: 8300000, guid: e1435300476c11349810c7b7f4d76c57, type: 3}
+  - {fileID: 8300000, guid: 204ff1bcdf7281043b477f44a36fd9c0, type: 3}
+  - {fileID: 8300000, guid: d0c6d7dc2d2add34897b17e49fd949ec, type: 3}
+  - {fileID: 8300000, guid: 15c7391277932fd448107569c8e2a596, type: 3}
+  - {fileID: 8300000, guid: 4805bdde273cb6546b2c512fd3971041, type: 3}
+  - {fileID: 8300000, guid: c4c7f0fc92882e541ac42396ca5c7c81, type: 3}
+  - {fileID: 8300000, guid: 5e9e100901cb8a74b8a54a767bb3295c, type: 3}
+  - {fileID: 8300000, guid: f932c6ffa505f9e45bb0d2e83d43e9a9, type: 3}
+  - {fileID: 8300000, guid: d1ef361694117c9499fce9c7f3107adb, type: 3}
+  - {fileID: 8300000, guid: 2f998e665fd1e1a4ea3d749d05155980, type: 3}
+  SoundEventType: 0
+  SoundEventLoop: 0
+  SoundEventMaxInstance: 3
+  SoundEventVolume: 0.6
+  SoundEventPitch: 1
+  SoundEventReverb: 1
+  RandomizeVolume: 0
+  RandomizePitch: 0
+  PitchRandomRange: {x: 0, y: 0}
+  VolumeRandomRange: {x: 0, y: 0}
+  SoundEventReverbPreset: 14
